@@ -321,6 +321,20 @@ details summary{color:var(--navy)}
 /* Match the supplied banner's white background on Safari/iPad and desktop. */
 .series-header,.map-identity{background:#fff}
 
+/* iPad landscape / small laptop: align the scene title, note and step menu
+   on the same grid row, with matching vertical edges and full-height cards. */
+@media(min-width:1051px) and (max-width:1199px){
+  .map-identity-inner{display:grid;grid-template-columns:max-content minmax(0,1.05fr) minmax(0,1fr);grid-template-rows:auto auto;column-gap:13px;row-gap:7px;align-items:stretch}
+  .identity-scene,.identity-title-row{display:contents}
+  .identity-scene>.identity-kicker{grid-column:1/-1;grid-row:1;margin:0}
+  .identity-copy{grid-column:1;grid-row:2;align-self:center}
+  .identity-title-row>.script-reminder{grid-column:2;grid-row:2;align-self:stretch;margin:0;min-width:0}
+  .identity-nav{grid-column:3;grid-row:2;display:flex;align-self:stretch;min-width:0}
+  .identity-nav .step-nav{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));width:100%;height:100%;align-items:stretch;gap:5px}
+  .identity-nav .step-nav button{height:100%;min-height:0;padding:7px 3px;gap:5px;justify-content:center}
+  .identity-nav .step-nav button>span:last-child{text-wrap:balance}
+}
+
 </style>
 </head>
 <body>
