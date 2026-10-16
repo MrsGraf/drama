@@ -305,6 +305,19 @@ details summary{color:var(--navy)}
 }
 @media print{.desktop-side{display:none!important}}
 
+/* Step 4: exam-style analytical writing followed by transferable method insight. */
+.exam-writing-task{margin-top:14px;margin-bottom:18px;padding:15px 18px}
+.exam-writing-task>p:last-child{line-height:1.58}
+.writing-scaffold{background:#f2f6f9;border:1px solid #d8e3ea;border-radius:5px;padding:17px 18px;margin:20px 0 24px}
+.writing-scaffold>.lbl{display:flex;align-items:center;gap:8px;color:var(--navy);text-transform:uppercase;font-size:.74rem;letter-spacing:.09em;font-weight:800;margin:0 0 13px}
+.writing-scaffold>.lbl>.icon{width:18px;height:18px;color:#a62e36}
+.writing-scaffold-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+.writing-phrase{background:#fff;border:1px solid #dce5ea;border-radius:4px;padding:12px 14px;min-width:0}
+.writing-phrase>strong{display:block;color:var(--navy);font-size:.84rem;margin-bottom:6px}
+.writing-phrase>p{margin:5px 0!important;font-size:.84rem;line-height:1.48;color:#475a6d}
+.writing-method-tip{font-size:.86rem;color:#3e5267;margin:13px 0 0!important;line-height:1.52}
+@media(max-width:650px){.writing-scaffold-grid{grid-template-columns:1fr}.writing-scaffold{padding:13px}.writing-phrase{padding:11px 12px}}
+
 </style>
 </head>
 <body>
@@ -339,7 +352,7 @@ details summary{color:var(--navy)}
       <button type="button" data-jump="0" class="active"><span class="num"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-dialogue"></use></svg><span class="sr-only">Step 1</span></span><span>What is said?</span></button>
       <button type="button" data-jump="1"><span class="num"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-search"></use></svg><span class="sr-only">Step 2</span></span><span>How is it said?</span></button>
       <button type="button" data-jump="2"><span class="num"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-progress"></use></svg><span class="sr-only">Step 3</span></span><span>How does it develop?</span></button>
-      <button type="button" data-jump="3"><span class="num"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-share"></use></svg><span class="sr-only">Step 4</span></span><span>Step back &amp; teach</span></button>
+      <button type="button" data-jump="3"><span class="num"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-share"></use></svg><span class="sr-only">Step 4</span></span><span>Stop, Write &amp; Share</span></button>
     </nav>
   </div>
 </div></section>
@@ -351,7 +364,7 @@ details summary{color:var(--navy)}
       <button type="button" data-jump="0" class="active"><span class="num"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-dialogue"></use></svg><span class="sr-only">Step 1</span></span><span>What is said?</span></button>
       <button type="button" data-jump="1"><span class="num"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-search"></use></svg><span class="sr-only">Step 2</span></span><span>How is it said?</span></button>
       <button type="button" data-jump="2"><span class="num"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-progress"></use></svg><span class="sr-only">Step 3</span></span><span>How does it develop?</span></button>
-      <button type="button" data-jump="3"><span class="num"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-share"></use></svg><span class="sr-only">Step 4</span></span><span>Step back &amp; teach</span></button>
+      <button type="button" data-jump="3"><span class="num"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-share"></use></svg><span class="sr-only">Step 4</span></span><span>Stop, Write &amp; Share</span></button>
     </nav>
       <hr class="side-divider">
       <div class="script-reminder" role="note"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-book"></use></svg><p><strong>Keep the original script open.</strong> All page and line references refer to the GoodNotes class edition. Evidence and interpretations belong in your own notes.</p></div>
@@ -483,20 +496,29 @@ details summary{color:var(--navy)}
       <div class="cue"><p class="lbl"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-lightbulb"></use></svg>Think critically</p><p>Has either character's position changed by the end — or have their conflicting expectations become clearer? Both are possible findings; support your answer with the text.</p></div>
     </div></section>
     <section class="step" id="step-4" aria-labelledby="s4-title"><div class="paper">
-      <div class="cp-top"><div class="cp-badge" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><use href="#ico-share"></use></svg></div><div class="cp-copy"><p class="eyebrow">Step 04 / 04 · Prepare at home</p><h2 id="s4-title">Step back &amp; teach</h2><p class="sub">Bring your analysis together — and make your group's insight useful to others</p></div></div>
-      <p class="lead">The other groups have examined different family conflicts. Your job is to explain <strong>what makes Walter and Ruth's conflict distinctive</strong> and demonstrate an analytical approach the others can use in their own scenes.</p>
-      <h3>Part A · What is this conflict really about?</h3>
-      <div class="task"><span class="task-n">1</span><p>Complete this idea in your own words: <em>What initially looks like a disagreement about _______ also reveals a conflict about _______.</em> You may challenge this formulation if the evidence suggests a different emphasis.</p></div>
-      <div class="task"><span class="task-n">2</span><p>Explain <strong>how Hansberry develops this conflict</strong>, using two or three particularly revealing examples from your close reading. Your points should connect dialogue, stage directions and use of language rather than simply naming devices.</p></div>
+      <div class="cp-top"><div class="cp-badge" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><use href="#ico-share"></use></svg></div><div class="cp-copy"><p class="eyebrow">Step 04 / 04 · Prepare at home</p><h2 id="s4-title">Stop, Write &amp; Share</h2><p class="sub">Bring your results together — and share what you have learned about analysing dialogue</p></div></div>
+      <p class="lead">You have explored the conflict, its presentation and its development. Now turn your findings into a <strong>coherent written analysis</strong>, then consider which analytical insight another group could use.</p>
+
+      <h3>Part A · Write an analysis</h3>
+      <p>Use your results from Steps 1–3 to practise writing a connected analysis, as you would in an exam.</p>
+      <div class="cue exam-writing-task"><p class="lbl"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-pen"></use></svg>Exam-style analysis task</p><p><strong>Analyse how Lorraine Hansberry presents and develops the conflict between Walter and Ruth in the extract. Focus on their interaction, use of language and stage directions.</strong></p></div>
+      <div class="task"><span class="task-n">1</span><p>Write a <strong>coherent analytical text</strong> in response to the task. Establish the central tension, develop your interpretation through <strong>two or three carefully chosen examples</strong>, and explain how the conflict changes or becomes clearer. Use <strong>integrated textual evidence</strong> and organise your ideas into connected paragraphs. Avoid retelling the plot or listing techniques without explaining their significance.</p></div>
+
+      <div class="writing-scaffold" aria-label="Writing support for a coherent drama analysis">
+        <p class="lbl"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-pen"></use></svg>Writing support · Linking your findings</p>
+        <div class="writing-scaffold-grid">
+          <div class="writing-phrase"><strong>Introduce the central conflict</strong><p><em>The exchange between Walter and Ruth reveals a tension between ...</em></p><p><em>What initially appears to be a disagreement about ... also points to ...</em></p></div>
+          <div class="writing-phrase"><strong>Analyse the interaction</strong><p><em>This becomes apparent when Walter/Ruth ...</em></p><p><em>Instead of responding to ..., ... , which suggests ...</em></p></div>
+          <div class="writing-phrase"><strong>Connect language and evidence</strong><p><em>Hansberry's use of ... emphasises ...</em></p><p><em>The repetition of ... / The stage direction ... suggests ... because ...</em></p></div>
+          <div class="writing-phrase"><strong>Explain the development</strong><p><em>While the exchange initially ..., it gradually ...</em></p><p><em>By the end of the scene, ... , highlighting ...</em></p></div>
+        </div>
+        <p class="writing-method-tip"><strong>Remember:</strong> Build each analytical point around a clear claim, relevant evidence and an explanation of its significance. Link your paragraphs to the overall interpretation rather than treating each device separately.</p>
+      </div>
+
       <h3>Part B · Your transferable insight</h3>
-      <div class="task"><span class="task-n">3</span><p>What can someone analysing <em>another</em> dialogue learn from your scene? Choose <strong>one useful analytical principle</strong> — for example, the importance of linked speaking turns or repeated everyday language — and demonstrate it with <strong>one exact example</strong>.</p></div>
-      <div class="task"><span class="task-n">4</span><p>Prepare a concise <strong>two-minute explanation</strong> for the other groups. Every member of your group should be able to explain the conflict, the relevant evidence and the transferable insight.</p></div>
-      <div class="cue warm"><p class="lbl"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-lightbulb"></use></svg>Your teach-back should answer</p><p><strong>WHAT</strong> is distinctive about this conflict? <strong>HOW</strong> does Hansberry reveal and develop it? <strong>WHAT CAN OTHERS LEARN</strong> about analysing dramatic dialogue?</p></div>
-      <h3>Bring to Thursday's lesson</h3>
-      <div class="twobox"><div><span class="badge">Your scene</span><p>A clear conflict statement with 2–3 carefully chosen references to the script.</p></div><div><span class="badge">Your method</span><p>One transferable analytical insight, explained through a concrete textual example.</p></div></div>
-      <details><summary><span class="summary-label"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-pen"></use></svg>Optional: useful ways to introduce your conclusion</span></summary><div class="hint"><p><em>The underlying tension between Walter and Ruth concerns ...</em></p><p><em>Hansberry makes this tension increasingly apparent through ...</em></p><p><em>Our analysis shows why it is useful to examine ... when analysing dramatic dialogue.</em></p></div></details>
-      <p class="closing"><span class="dot"></span><strong>No completed model answer is provided.</strong> Your interpretation should grow out of your own evidence and reasoning.</p>
-      
+      <div class="cue warm"><p class="lbl"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-lightbulb"></use></svg>Your results · The bigger picture</p><p><strong>WHAT</strong> makes this conflict distinctive? <strong>HOW</strong> does Hansberry reveal and develop it? <strong>WHAT CAN OTHERS LEARN</strong> about analysing dramatic dialogue?</p></div>
+      <div class="task"><span class="task-n">2</span><p>Look back at your analysis and identify <strong>one transferable analytical principle</strong> that could help someone examine a different scene. Explain <strong>why it matters</strong> and demonstrate it with <strong>one specific example</strong> from Walter and Ruth's dialogue. Be ready to share this insight with the other groups.</p></div>
+      <details><summary><span class="summary-label"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-lightbulb"></use></svg>Need a small nudge?</span></summary><div class="hint"><p>Think about what your close reading has taught you. For example, consider why it helps to examine <strong>linked speaking turns</strong> rather than isolated statements, how <strong>repeated everyday expressions</strong> can change in meaning, how <strong>stage directions</strong> affect the interpretation of spoken words, or what a <strong>shift in tone</strong> may reveal about a relationship. Choose only what you can support with evidence from your scene.</p></div></details>
     </div></section>
   </main>
 </div>
