@@ -247,28 +247,24 @@ details summary{color:var(--navy)}
 .toolkit-tabs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:5px;margin:0 0 10px}
 .toolkit-tabs button{min-width:0;appearance:none;padding:8px 5px;border:1px solid #d6e0e7;background:#f4f6f8;border-radius:4px;color:#354e67;font-size:.78rem;font-weight:650;line-height:1.25;cursor:pointer}
 .toolkit-tabs button[aria-selected="true"]{background:#193b60;color:#fff;border-color:#193b60;box-shadow:inset 0 -2px 0 #c74a48}
-.toolkit-tabs button:focus-visible,.toolkit-footer button:focus-visible{outline:2px solid #b03338;outline-offset:2px}
+.toolkit-tabs button:focus-visible{outline:2px solid #b03338;outline-offset:2px}
 .toolkit-slide[hidden]{display:none!important}
 .toolkit-viewport{min-height:120px}
 .toolkit-slide{margin:0!important}
 .toolkit-tone-scroll{max-height:295px;overflow-y:auto;overscroll-behavior:contain;padding:0 6px 1px 0;scrollbar-color:#a7bacb transparent}
 .toolkit-tone-grid{margin:8px 0 10px;grid-template-columns:repeat(3,minmax(0,1fr))}
-.toolkit-footer{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:7px;border-top:1px solid #dae3ea;margin-top:13px;padding-top:10px}
-.toolkit-footer button{appearance:none;border:1px solid #cdd8e2;background:#f8fafc;color:#193b60;border-radius:4px;padding:6px 10px;font-size:.78rem;line-height:1.35;cursor:pointer;font-weight:700}
-.toolkit-footer button:disabled{opacity:.35;cursor:default}
-.toolkit-footer button:not(:disabled):hover{background:#eaf0f5}
-.toolkit-counter{color:#586b7d;font-size:.76rem;font-weight:650}
-.toolkit-footer .toolkit-close{margin-left:auto;border:1px solid #b62b32;color:#a42c34;background:white}
-.toolkit-footer .toolkit-close:hover{background:#fbeff0}
-.toolkit-close span{font-size:1.08rem;line-height:.8;vertical-align:-.05em;margin-left:3px}
 .conversation-map{display:grid;grid-template-columns:minmax(0,1fr) 24px minmax(0,1fr) 24px minmax(0,1fr);align-items:stretch;gap:6px;margin:17px 0 22px}
 .conversation-map-stage{border:1px solid #d4e0e8;border-top:3px solid #294b70;border-radius:5px;padding:14px;background:#f5f8fa;text-align:center}
 .conversation-map-stage strong{display:block;color:var(--navy);font-size:.89rem;letter-spacing:.02em}
 .conversation-map-stage p{margin:6px 0 0!important;color:#4e6275;font-size:.83rem;line-height:1.42}
 .conversation-map-arrow{display:flex;align-items:center;justify-content:center;color:#aa3035;font-size:1.5rem;font-weight:700}
 @media(max-width:850px){.toolkit-tone-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(max-width:600px){.toolkit-tabs{grid-template-columns:repeat(2,minmax(0,1fr))}.toolkit-footer .toolkit-close{flex:1 1 100%;margin-left:0}.conversation-map{grid-template-columns:1fr;gap:4px}.conversation-map-arrow{font-size:1.2rem;line-height:1;min-height:17px;transform:rotate(90deg)}}
+@media(max-width:600px){.toolkit-tabs{grid-template-columns:repeat(2,minmax(0,1fr))}.conversation-map{grid-template-columns:1fr;gap:4px}.conversation-map-arrow{font-size:1.2rem;line-height:1;min-height:17px;transform:rotate(90deg)}}
 
+/* Ordinary vocabulary annotations are subtle: no bold, italic or info icon. */
+.vocab-help .inline-help-trigger{font-weight:400;font-style:normal;color:inherit;border-bottom:1px dotted #8a9bac;padding-bottom:0;letter-spacing:inherit;text-transform:inherit}
+.vocab-help .inline-help-trigger:hover,.vocab-help .inline-help-trigger:focus-visible{font-weight:400;color:var(--navy);border-bottom-color:#a42c34}
+@media print{.vocab-help .inline-help-trigger{font-weight:400;font-style:normal}}
 </style>
 </head>
 <body>
@@ -332,7 +328,7 @@ details summary{color:var(--navy)}
           </div>
         </div>
       </div>
-      <details><summary><span class="summary-label"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-lightbulb"></use></svg>Need a small nudge?</span></summary><div class="hint"><p>Look at two or three <span class="inline-help"><button class="inline-help-trigger" type="button" aria-expanded="false" aria-describedby="tip-consecutive">consecutive <span class="help-glyph" aria-hidden="true">ⓘ</span></button><span class="inline-help-popup" role="tooltip" id="tip-consecutive">Directly following one another, without other speaking turns in between.</span></span> speaking turns. What does one character try to communicate? How does the other respond? What might this exchange reveal? Base your interpretation on the interaction rather than an assumption.</p></div></details>
+      <details><summary><span class="summary-label"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-lightbulb"></use></svg>Need a small nudge?</span></summary><div class="hint"><p>Look at two or three <span class="inline-help vocab-help"><button class="inline-help-trigger" type="button" aria-expanded="false" aria-describedby="tip-consecutive">consecutive</button><span class="inline-help-popup" role="tooltip" id="tip-consecutive">Directly following one another, without other speaking turns in between.</span></span> speaking turns. What does one character try to communicate? How does the other respond? What might this exchange reveal? Base your interpretation on the interaction rather than an assumption.</p></div></details>
       
     </div></section>
     <section class="step" id="step-2" aria-labelledby="s2-title"><div class="paper">
@@ -366,7 +362,7 @@ details summary{color:var(--navy)}
               <section class="toolkit-section toolkit-slide" role="tabpanel" id="toolkit-panel-syntax" aria-labelledby="toolkit-tab-syntax" data-toolkit-panel="0">
                 <h4>Syntax and sentence structure</h4>
                 <ul>
-                  <li><strong>Short or clipped sentences</strong> may convey urgency or frustration, or suggest that a character is <span class="inline-help"><button class="inline-help-trigger" type="button" aria-expanded="false" aria-describedby="tip-reluctant">reluctant <span class="help-glyph" aria-hidden="true">ⓘ</span></button><span class="inline-help-popup" role="tooltip" id="tip-reluctant">Hesitant or unwilling to do something.</span></span> to <span class="inline-help"><button class="inline-help-trigger" type="button" aria-expanded="false" aria-describedby="tip-elaborate">elaborate <span class="help-glyph" aria-hidden="true">ⓘ</span></button><span class="inline-help-popup" role="tooltip" id="tip-elaborate">To explain or develop an idea in more detail; to expand on something.</span></span>.</li>
+                  <li><strong>Short or clipped sentences</strong> may convey urgency or frustration, or suggest that a character is <span class="inline-help vocab-help"><button class="inline-help-trigger" type="button" aria-expanded="false" aria-describedby="tip-reluctant">reluctant</button><span class="inline-help-popup" role="tooltip" id="tip-reluctant">Hesitant or unwilling to do something.</span></span> to <span class="inline-help vocab-help"><button class="inline-help-trigger" type="button" aria-expanded="false" aria-describedby="tip-elaborate">elaborate</button><span class="inline-help-popup" role="tooltip" id="tip-elaborate">To explain or develop an idea in more detail; to expand on something.</span></span>.</li>
                   <li><strong>Longer or complex sentences</strong> may allow a character to explain, justify or develop a thought.</li>
                   <li><strong>Unfinished sentences, interruptions and pauses</strong> may suggest hesitation, tension or a disrupted exchange.</li>
                   <li><strong>Parallel structures</strong> can create rhythm, connect ideas or emphasise a contrast.</li>
@@ -401,12 +397,6 @@ details summary{color:var(--navy)}
                 <p>Watch for meaningful <strong>repetition</strong>, <strong>contrasts</strong>, <strong>irony</strong> or <span class="inline-help"><button class="inline-help-trigger" type="button" aria-expanded="false" aria-describedby="tip-figurative">figurative language <span class="help-glyph" aria-hidden="true">ⓘ</span></button><span class="inline-help-popup" role="tooltip" id="tip-figurative">Language used in a non-literal way to create images or comparisons, for example metaphors and similes.</span></span> where they actually occur. Ask how these choices affect the exchange rather than merely listing devices.</p>
                 <p class="toolkit-closing"><strong>From speech analysis to drama:</strong> Instead of focusing mainly on how a speaker persuades an audience, explain what the dialogue reveals about the characters, their relationship and the developing conflict.</p>
               </section>
-            </div>
-            <div class="toolkit-footer">
-              <button class="toolkit-pager" type="button" data-toolkit-prev disabled aria-label="Previous language category">← Previous</button>
-              <span class="toolkit-counter" aria-live="polite">1 of 4</span>
-              <button class="toolkit-pager" type="button" data-toolkit-next>Next →</button>
-              <button class="toolkit-close" type="button" data-toolkit-close>Close toolkit <span aria-hidden="true">×</span></button>
             </div>
           </div>
         </details>
@@ -486,10 +476,6 @@ const toolkit=document.querySelector('.language-toolkit');
 if(toolkit){
   const tabs=Array.from(toolkit.querySelectorAll('[data-toolkit-tab]'));
   const panels=Array.from(toolkit.querySelectorAll('[data-toolkit-panel]'));
-  const prev=toolkit.querySelector('[data-toolkit-prev]');
-  const next=toolkit.querySelector('[data-toolkit-next]');
-  const counter=toolkit.querySelector('.toolkit-counter');
-  const close=toolkit.querySelector('[data-toolkit-close]');
   let activeToolkit=0;
   function chooseToolkit(i,moveFocus=false){
     activeToolkit=Math.max(0,Math.min(tabs.length-1,i));
@@ -499,9 +485,6 @@ if(toolkit){
       tab.tabIndex=isActive?0:-1;
       panels[j].hidden=!isActive;
     });
-    prev.disabled=activeToolkit===0;
-    next.disabled=activeToolkit===tabs.length-1;
-    counter.textContent=(activeToolkit+1)+' of '+tabs.length;
     if(moveFocus)tabs[activeToolkit].focus();
     closeTips();
   }
@@ -515,9 +498,6 @@ if(toolkit){
       }
     });
   });
-  prev.addEventListener('click',()=>chooseToolkit(activeToolkit-1));
-  next.addEventListener('click',()=>chooseToolkit(activeToolkit+1));
-  close.addEventListener('click',()=>{toolkit.open=false;toolkit.querySelector('summary').focus();closeTips();});
   chooseToolkit(0);
 }
 })();
