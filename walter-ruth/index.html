@@ -279,6 +279,32 @@ details summary{color:var(--navy)}
 .language-cue>.language-toolkit{margin-top:0}
 .language-cue>.language-task-intro{margin:12px 0 17px!important}
 
+/* Restore the original desktop sidebar, without altering the compact iPad/mobile header. */
+.desktop-side{display:none}
+@media(min-width:1200px){
+  .map-identity{position:static;box-shadow:none}
+  .map-identity-inner{display:block;padding-top:18px;padding-bottom:20px}
+  .identity-scene>.identity-kicker{margin:0 0 15px}
+  .identity-title-row{display:block}
+  .identity-title-row>.script-reminder,.identity-nav{display:none}
+  .map-identity h1{font-size:clamp(2rem,3vw,2.65rem)}
+  .main{display:grid;grid-template-columns:248px minmax(0,1fr);gap:24px;align-items:start;margin-top:22px}
+  .desktop-side{display:block;position:sticky;top:20px}
+  .desktop-side .side-card{padding:17px;background:var(--paper);border:1px solid var(--line);border-top:4px solid var(--navy);box-shadow:0 5px 20px rgba(22,46,79,.045);border-radius:5px}
+  .desktop-side .side-title{display:block;font-size:.71rem;letter-spacing:.11em;margin:0 0 12px;color:var(--navy)}
+  .desktop-side .step-nav{display:grid;grid-template-columns:1fr;gap:5px}
+  .desktop-side .step-nav button{display:flex;flex-direction:row;justify-content:flex-start;align-items:center;text-align:left;gap:10px;min-height:0;font-size:.85rem;line-height:1.3;padding:11px 9px;border:0;border-radius:5px;background:transparent;color:var(--ink);box-shadow:none}
+  .desktop-side .step-nav button:hover{background:#eff2f5}
+  .desktop-side .step-nav button.active{background:#eaf0f5;color:var(--navy);box-shadow:inset 3px 0 0 var(--orange);font-weight:750}
+  .desktop-side .step-nav .num{width:28px;height:28px;flex:none;background:transparent;border:1px solid #cad5de;border-radius:50%;color:var(--navy)}
+  .desktop-side .step-nav .num .icon{width:19px;height:19px}
+  .desktop-side .step-nav button.active .num{background:var(--navy);color:white;border-color:var(--navy)}
+  .desktop-side .side-divider{display:block;border:0;border-top:1px solid #d8dfe4;margin:18px 0}
+  .desktop-side .script-reminder{display:flex;margin:0;padding:11px 10px;gap:8px;font-size:.79rem;line-height:1.5;border-left-width:3px}
+  .desktop-side .script-reminder>.icon{width:17px;height:17px;margin-top:2px}
+}
+@media print{.desktop-side{display:none!important}}
+
 </style>
 </head>
 <body>
@@ -318,6 +344,19 @@ details summary{color:var(--navy)}
   </div>
 </div></section>
 <div class="wrap main">
+  <aside class="side desktop-side" aria-label="Desktop analysis navigation">
+    <div class="side-card">
+      <p class="side-title">Your analysis route</p>
+    <nav class="step-nav" aria-label="Desktop analysis steps">
+      <button type="button" data-jump="0" class="active"><span class="num"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-dialogue"></use></svg><span class="sr-only">Step 1</span></span><span>What is said?</span></button>
+      <button type="button" data-jump="1"><span class="num"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-search"></use></svg><span class="sr-only">Step 2</span></span><span>How is it said?</span></button>
+      <button type="button" data-jump="2"><span class="num"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-progress"></use></svg><span class="sr-only">Step 3</span></span><span>How does it develop?</span></button>
+      <button type="button" data-jump="3"><span class="num"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-share"></use></svg><span class="sr-only">Step 4</span></span><span>Step back &amp; teach</span></button>
+    </nav>
+      <hr class="side-divider">
+      <div class="script-reminder" role="note"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-book"></use></svg><p><strong>Keep the original script open.</strong> All page and line references refer to the GoodNotes class edition. Evidence and interpretations belong in your own notes.</p></div>
+    </div>
+  </aside>
   <main class="content" id="analysis-main">
     <section class="step active" id="step-1" aria-labelledby="s1-title"><div class="paper">
       <div class="cp-top"><div class="cp-badge" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><use href="#ico-dialogue"></use></svg></div><div class="cp-copy"><p class="eyebrow">Step 01 / 04</p><h2 id="s1-title">What is said?</h2><p class="sub">Understanding the conflict before analysing its presentation</p></div></div>
@@ -429,7 +468,7 @@ details summary{color:var(--navy)}
       <div class="cp-top"><div class="cp-badge" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><use href="#ico-progress"></use></svg></div><div class="cp-copy"><p class="eyebrow">Step 03 / 04</p><h2 id="s3-title">How does it develop?</h2><p class="sub">Stepping back to examine the development of the whole exchange</p></div></div>
       <p class="lead">You have examined what the characters say and how they interact. Now <strong>zoom out</strong>: does their interaction change between the beginning and the end, and if so, how? Focus on the <strong>progression of the dialogue</strong> rather than analysing more isolated devices.</p>
       <h3>Map the conversation</h3>
-      <p><strong>Sketch the progression of their conversation</strong> in GoodNotes, using keywords and brief textual references. Try to find <strong>two or three adjectives</strong> that best describe Walter and Ruth’s interaction and how it changes from beginning to end. Use the three stages below to organise your observations.</p>
+      <p><strong>Sketch the progression of their conversation</strong>, using keywords and brief textual references. Try to find <strong>two or three adjectives</strong> that best describe Walter and Ruth’s interaction and how it changes from beginning to end. Use the three stages below to organise your observations.</p>
       <div class="conversation-map" aria-label="Dialogue timeline: beginning, development and ending, connected by arrows">
         <div class="conversation-map-stage"><strong>Beginning</strong><p>How do they interact at first?</p></div>
         <div class="conversation-map-arrow" aria-hidden="true">→</div>
@@ -468,8 +507,8 @@ details summary{color:var(--navy)}
 const nav=Array.from(document.querySelectorAll('[data-jump]'));
 const steps=Array.from(document.querySelectorAll('.step'));
 let index=0;
-function show(i,scroll=true){index=Math.max(0,Math.min(steps.length-1,i));steps.forEach((x,k)=>{const active=k===index;x.classList.toggle('active',active);x.setAttribute('aria-hidden',String(!active))});nav.forEach((x,k)=>{x.classList.toggle('active',k===index);if(k===index)x.setAttribute('aria-current','step');else x.removeAttribute('aria-current')});if(scroll){const m=document.getElementById('analysis-main');const sticky=document.querySelector('.map-identity');const offset=(sticky?sticky.offsetHeight:0)+12;let y=m.getBoundingClientRect().top+window.scrollY-offset;window.scrollTo({top:Math.max(0,y),behavior:'smooth'})}}
-nav.forEach((el,k)=>el.addEventListener('click',()=>show(k)));
+function show(i,scroll=true){index=Math.max(0,Math.min(steps.length-1,i));steps.forEach((x,k)=>{const active=k===index;x.classList.toggle('active',active);x.setAttribute('aria-hidden',String(!active))});nav.forEach(x=>{const current=Number(x.dataset.jump)===index;x.classList.toggle('active',current);if(current)x.setAttribute('aria-current','step');else x.removeAttribute('aria-current')});if(scroll){const m=document.getElementById('analysis-main');const sticky=document.querySelector('.map-identity');const isDesktop=window.matchMedia('(min-width:1200px)').matches;const offset=isDesktop?16:(sticky?sticky.offsetHeight:0)+12;let y=m.getBoundingClientRect().top+window.scrollY-offset;window.scrollTo({top:Math.max(0,y),behavior:'smooth'})}}
+nav.forEach(el=>el.addEventListener('click',()=>show(Number(el.dataset.jump))));
 show(0,false);
 
 /* Tips can be opened by touch, mouse or keyboard. Only one stays open. */
