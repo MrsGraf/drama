@@ -80,13 +80,13 @@ details summary{color:var(--navy)}
 .cue-stair>.reading-note{margin:0 0 17px}
 .analysis-stair{display:flex;flex-direction:column;gap:0}
 .stair-card{background:#fff;border:1px solid #d5dfe7;border-radius:6px;padding:13px 16px}
-.stair-card.indent-1{margin-left:13px}
-.stair-card.indent-2{margin-left:26px}
+.stair-card.indent-1{margin-left:0}
+.stair-card.indent-2{margin-left:0}
 .stair-label{color:var(--navy);font-weight:800;display:flex;align-items:center;gap:9px;margin:0 0 5px}
 .stair-label .icon{width:19px;height:19px;color:#a42b32}
 .stair-card p{margin:0!important}
 .stair-arrow{display:flex;align-items:center;justify-content:center;height:30px;color:#a32e34;font-size:25px;font-weight:700;line-height:1}
-@media(max-width:520px){.cue-stair{padding:16px}.stair-card.indent-1{margin-left:8px}.stair-card.indent-2{margin-left:16px}}
+@media(max-width:520px){.cue-stair{padding:16px}}
 
 /* Persistent scene heading and adaptive step navigation */
 .map-identity{position:sticky;top:0;z-index:30;background:rgba(255,255,255,.985);box-shadow:0 4px 17px rgba(18,46,86,.075)}
@@ -145,6 +145,19 @@ details summary{color:var(--navy)}
  .cp-badge .icon{filter:none}
 }
 
+/* Contextual vocabulary and method tips: hover on desktop, tap or keyboard on iPad */
+.inline-help{position:relative;display:inline-block}
+.inline-help-trigger{appearance:none;border:0;border-bottom:1px dotted #a62e36;background:transparent;border-radius:0;padding:0 0 1px;margin:0;color:var(--navy);font:inherit;font-style:italic;font-weight:650;cursor:help;text-decoration:none;line-height:inherit}
+.inline-help-trigger:hover,.inline-help-trigger:focus-visible{color:#a42c34;border-bottom-color:currentColor}
+.inline-help-trigger:focus-visible{outline:2px solid var(--navy);outline-offset:3px;border-radius:2px}
+.help-glyph{font:700 .85em/1 system-ui,sans-serif;color:#a42c34;margin-left:.12em}
+.inline-help-popup{display:none;position:absolute;left:0;bottom:calc(100% + 9px);z-index:80;width:min(320px,calc(100vw - 48px));padding:11px 13px;border:1px solid #cad7e0;border-left:3px solid #a42c34;border-radius:5px;background:#fff;color:#2b4056;box-shadow:0 7px 22px rgba(15,35,56,.16);font:400 .85rem/1.5 system-ui,-apple-system,"Segoe UI",Arial,sans-serif;font-style:normal;white-space:normal;text-align:left}
+.inline-help-popup strong{color:#17365e}
+.inline-help-popup:after{content:"";position:absolute;top:100%;left:18px;border:7px solid transparent;border-top-color:#fff}
+.inline-help:hover .inline-help-popup,.inline-help:focus-within .inline-help-popup,.inline-help.open .inline-help-popup{display:block}
+@media(max-width:600px){.inline-help-popup{left:0;bottom:calc(100% + 9px);width:min(275px,calc(100vw - 70px));font-size:.81rem}.inline-help{max-width:100%}}
+@media print{.inline-help-trigger{border:0;color:inherit;font-style:italic}.inline-help-popup,.help-glyph{display:none!important}}
+
 </style>
 </head>
 <body>
@@ -187,7 +200,7 @@ details summary{color:var(--navy)}
       <p class="lead">Before examining individual techniques, find out <strong>what is at stake</strong>. A conflict becomes meaningful when we understand what the characters want from each other — and why they may not be able to provide it.</p>
       <div class="cue cue-stair">
         <p class="lbl"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-book"></use></svg>Read &amp; explore</p>
-        <p class="reading-note">Read the complete exchange between Walter and Ruth. Work through the following questions in order and make notes on your findings.</p>
+        <p class="reading-note">Read the complete exchange between Walter and Ruth <strong>(p. 8, l. 2 – p. 10, l. 35)</strong>. Work through the following questions in order and make notes on your findings.</p>
         <div class="analysis-stair" aria-label="Three connected stages of understanding the conflict">
           <div class="stair-card">
             <div class="stair-label"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-dialogue"></use></svg>Identify the different perspectives</div>
@@ -196,7 +209,7 @@ details summary{color:var(--navy)}
           <div class="stair-arrow" aria-hidden="true">↓</div>
           <div class="stair-card indent-1">
             <div class="stair-label"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-search"></use></svg>Look beneath the disagreement</div>
-            <p>What causes their frustration? Distinguish the <em>immediate topic</em> of the argument from any deeper expectations or pressures.</p>
+            <p>What causes their frustration? Distinguish the <span class="inline-help"><button class="inline-help-trigger" type="button" aria-expanded="false" aria-describedby="tip-immediate">immediate topic <span class="help-glyph" aria-hidden="true">ⓘ</span></button><span class="inline-help-popup" role="tooltip" id="tip-immediate"><strong>Analytical distinction:</strong> What are the characters explicitly discussing at this moment? Compare this with any deeper issues revealed by their interaction. The two need not be the same.</span></span> of the argument from any deeper expectations or pressures.</p>
           </div>
           <div class="stair-arrow" aria-hidden="true">↓</div>
           <div class="stair-card indent-2">
@@ -205,7 +218,7 @@ details summary{color:var(--navy)}
           </div>
         </div>
       </div>
-      <details><summary><span class="summary-label"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-lightbulb"></use></svg>Need a small nudge?</span></summary><div class="hint"><p>Look at two or three consecutive speaking turns. What does one character try to communicate? How does the other respond? What might this exchange reveal? Base your interpretation on the interaction rather than an assumption.</p></div></details>
+      <details><summary><span class="summary-label"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-lightbulb"></use></svg>Need a small nudge?</span></summary><div class="hint"><p>Look at two or three <span class="inline-help"><button class="inline-help-trigger" type="button" aria-expanded="false" aria-describedby="tip-consecutive">consecutive <span class="help-glyph" aria-hidden="true">ⓘ</span></button><span class="inline-help-popup" role="tooltip" id="tip-consecutive">Directly following one another in the dialogue — <em>aufeinanderfolgend</em>.</span></span> speaking turns. What does one character try to communicate? How does the other respond? What might this exchange reveal? Base your interpretation on the interaction rather than an assumption.</p></div></details>
       
     </div></section>
     <section class="step" id="step-2" aria-labelledby="s2-title"><div class="paper">
@@ -269,6 +282,19 @@ let index=0;
 function show(i,scroll=true){index=Math.max(0,Math.min(steps.length-1,i));steps.forEach((x,k)=>{const active=k===index;x.classList.toggle('active',active);x.setAttribute('aria-hidden',String(!active))});nav.forEach((x,k)=>{x.classList.toggle('active',k===index);if(k===index)x.setAttribute('aria-current','step');else x.removeAttribute('aria-current')});if(scroll){const m=document.getElementById('analysis-main');const sticky=document.querySelector('.map-identity');const offset=(sticky?sticky.offsetHeight:0)+12;let y=m.getBoundingClientRect().top+window.scrollY-offset;window.scrollTo({top:Math.max(0,y),behavior:'smooth'})}}
 nav.forEach((el,k)=>el.addEventListener('click',()=>show(k)));
 show(0,false);
+
+/* Tips can be opened by touch, mouse or keyboard. Only one stays open. */
+const tipButtons=Array.from(document.querySelectorAll('.inline-help-trigger'));
+function closeTips(except=null){
+  tipButtons.forEach(b=>{const isCurrent=b===except;b.closest('.inline-help').classList.toggle('open',isCurrent);b.setAttribute('aria-expanded',String(isCurrent));});
+}
+tipButtons.forEach(b=>b.addEventListener('click',event=>{
+  event.stopPropagation();
+  const wasOpen=b.closest('.inline-help').classList.contains('open');
+  closeTips(wasOpen?null:b);
+}));
+document.addEventListener('click',event=>{if(!event.target.closest('.inline-help'))closeTips();});
+document.addEventListener('keydown',event=>{if(event.key==='Escape'){closeTips();}});
 })();
 </script>
 </body>
