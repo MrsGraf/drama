@@ -158,6 +158,22 @@ details summary{color:var(--navy)}
 @media(max-width:600px){.inline-help-popup{left:0;bottom:calc(100% + 9px);width:min(275px,calc(100vw - 70px));font-size:.81rem}.inline-help{max-width:100%}}
 @media print{.inline-help-trigger{border:0;color:inherit;font-style:italic}.inline-help-popup,.help-glyph{display:none!important}}
 
+/* Keep the class-edition reminder directly above the persistent navigation. */
+.identity-nav .script-reminder{
+ margin:0 0 7px;padding:6px 9px;
+ border-left:2px solid #a83035;border-radius:3px;
+ background:#f3f6f8;color:#46556b;
+ font-size:.73rem;line-height:1.32;gap:7px;
+}
+.identity-nav .script-reminder>.icon{width:15px;height:15px;margin-top:1px}
+@media(max-width:930px){
+ .identity-nav .script-reminder{font-size:.73rem;padding:5px 9px;margin-bottom:7px}
+}
+@media(max-width:600px){
+ .identity-nav .script-reminder{font-size:.67rem;line-height:1.27;padding:4px 7px;margin-bottom:6px}
+ .identity-nav .script-reminder>.icon{width:14px;height:14px}
+}
+
 </style>
 </head>
 <body>
@@ -183,7 +199,7 @@ details summary{color:var(--navy)}
     <div class="identity-chips"><span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-book"></use></svg> p. 8, l. 2 – p. 10, l. 35</span></div>
   </div>
   <div class="identity-nav">
-    <p class="identity-route">Your analysis route</p>
+  <div class="script-reminder" role="note"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-book"></use></svg><p><strong>Keep the original script open.</strong> All page and line references refer to the GoodNotes class edition. Evidence and interpretations belong in your own notes.</p></div>
     <nav class="step-nav" aria-label="Analysis steps">
       <button type="button" data-jump="0" class="active"><span class="num"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-dialogue"></use></svg><span class="sr-only">Step 1</span></span><span>What is said?</span></button>
       <button type="button" data-jump="1"><span class="num"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-search"></use></svg><span class="sr-only">Step 2</span></span><span>How is it said?</span></button>
@@ -193,7 +209,6 @@ details summary{color:var(--navy)}
   </div>
 </div></section>
 <div class="wrap main">
-  <div class="script-reminder" role="note"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-book"></use></svg><p><strong>Keep the original script open.</strong> All page and line references refer to the GoodNotes class edition. Evidence and interpretations belong in your own notes.</p></div>
   <main class="content" id="analysis-main">
     <section class="step active" id="step-1" aria-labelledby="s1-title"><div class="paper">
       <div class="cp-top"><div class="cp-badge" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><use href="#ico-dialogue"></use></svg></div><div class="cp-copy"><p class="eyebrow">Step 01 / 04</p><h2 id="s1-title">What is said?</h2><p class="sub">Understanding the conflict before analysing its presentation</p></div></div>
