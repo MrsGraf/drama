@@ -87,6 +87,64 @@ details summary{color:var(--navy)}
 .stair-card p{margin:0!important}
 .stair-arrow{display:flex;align-items:center;justify-content:center;height:30px;color:#a32e34;font-size:25px;font-weight:700;line-height:1}
 @media(max-width:520px){.cue-stair{padding:16px}.stair-card.indent-1{margin-left:8px}.stair-card.indent-2{margin-left:16px}}
+
+/* Persistent scene heading and adaptive step navigation */
+.map-identity{position:sticky;top:0;z-index:30;background:rgba(255,255,255,.985);box-shadow:0 4px 17px rgba(18,46,86,.075)}
+.map-identity-inner{display:grid;grid-template-columns:minmax(270px,.86fr) minmax(0,1.5fr);gap:24px;padding-top:13px;padding-bottom:13px;align-items:center}
+.identity-copy{min-width:0}
+.identity-kicker{margin:0 0 5px;font-size:.66rem}
+.map-identity h1{font-size:clamp(1.55rem,2.45vw,2rem)}
+.identity-chips{margin-top:7px}
+.identity-chips span{font-size:.74rem;padding:3px 8px}
+.identity-nav{min-width:0}
+.identity-route{margin:0 0 5px;color:#677485;font-size:.67rem;font-weight:800;text-transform:uppercase;letter-spacing:.09em}
+.step-nav{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}
+.step-nav button{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;text-align:center;min-width:0;min-height:69px;padding:6px 3px;border:1px solid #e0e4e8;border-radius:5px;background:#f9fafb;font-size:.73rem;line-height:1.25;color:var(--navy)}
+.step-nav button:hover{background:#eef3f7}
+.step-nav button.active{background:#e9f1f7;box-shadow:inset 0 -3px 0 var(--orange)}
+.step-nav .num{width:25px;height:25px;border:0;border-radius:4px;background:transparent}
+.step-nav .num .icon{width:21px;height:21px}
+.step-nav button.active .num{background:var(--navy);color:white}
+.main{display:block;margin-top:20px;margin-bottom:75px}
+.content{min-width:0}
+.script-reminder{display:flex;align-items:flex-start;gap:10px;margin:0 0 17px;padding:12px 17px;background:#edf2f6;border-left:3px solid #a83035;border-radius:4px;color:#40536a;font-size:.88rem;line-height:1.5}
+.script-reminder>.icon{flex:none;margin-top:2px;width:19px;height:19px;color:var(--navy)}
+.script-reminder p{margin:0}
+.script-reminder strong{color:var(--navy)}
+.cp-badge{background:transparent;border:0;box-shadow:none;width:72px;min-height:0;flex:none}
+.cp-badge .icon{width:48px;height:48px;filter:drop-shadow(2px 3px 2px rgba(21,44,69,.23));stroke-width:1.55}
+@media(max-width:930px){
+ .map-identity-inner{grid-template-columns:1fr;gap:10px;padding-top:11px;padding-bottom:11px}
+ .identity-route{display:none}
+ .step-nav{grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}
+ .step-nav button{min-height:52px;flex-direction:row;text-align:left;gap:5px;font-size:.72rem}
+ .step-nav .num{width:23px;height:23px;flex:none}
+ .main{display:block;margin-top:17px}
+ .paper{padding:24px}
+}
+@media(max-width:600px){
+ .map-identity-inner{gap:7px;padding-top:8px;padding-bottom:9px}
+ .identity-kicker{font-size:.58rem;margin-bottom:1px}
+ .map-identity h1{font-size:1.42rem}
+ .identity-chips{margin-top:3px}
+ .identity-chips span{font-size:.66rem;padding:2px 6px}
+ .step-nav{gap:4px}
+ .step-nav button{min-height:54px;flex-direction:column;gap:1px;text-align:center;padding:4px 2px;font-size:.63rem;line-height:1.1}
+ .step-nav .num{height:22px;width:22px}
+ .step-nav .num .icon{width:18px;height:18px}
+ .script-reminder{padding:10px 11px;font-size:.8rem}
+ .cp-top{gap:10px}
+ .cp-badge{width:44px}
+ .cp-badge .icon{width:34px;height:34px}
+}
+@media print{
+ .map-identity{position:static;box-shadow:none}
+ .map-identity-inner{display:block}
+ .identity-nav{display:none}
+ .script-reminder{display:none}
+ .cp-badge .icon{filter:none}
+}
+
 </style>
 </head>
 <body>
@@ -109,28 +167,23 @@ details summary{color:var(--navy)}
   <div class="identity-copy">
     <p class="identity-kicker"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-dialogue"></use></svg> ACT I, SCENE I</p>
     <h1 id="map-title">Walter <span class="identity-amp">&amp;</span> Ruth</h1>
-    
-    
     <div class="identity-chips"><span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-book"></use></svg> p. 8, l. 2 – p. 10, l. 35</span></div>
   </div>
-  <div class="identity-number" aria-hidden="true"><span>GROUP</span><strong>01</strong><small>DIALOGUE ANALYSIS</small></div>
-</div></section>
-<div class="wrap main">
-  <aside class="side"><div class="side-card">
-    <p class="side-title">Your analysis route</p>
+  <div class="identity-nav">
+    <p class="identity-route">Your analysis route</p>
     <nav class="step-nav" aria-label="Analysis steps">
       <button type="button" data-jump="0" class="active"><span class="num"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-dialogue"></use></svg><span class="sr-only">Step 1</span></span><span>What is said?</span></button>
       <button type="button" data-jump="1"><span class="num"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-search"></use></svg><span class="sr-only">Step 2</span></span><span>How is it said?</span></button>
       <button type="button" data-jump="2"><span class="num"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-progress"></use></svg><span class="sr-only">Step 3</span></span><span>How does it develop?</span></button>
       <button type="button" data-jump="3"><span class="num"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-share"></use></svg><span class="sr-only">Step 4</span></span><span>Step back &amp; teach</span></button>
     </nav>
-    <hr class="side-divider">
-    <div class="side-ref"><strong>Keep the original script open.</strong><br>All page and line references refer to the annotated 92-page class edition. Evidence and interpretations belong in your own notes.</div>
-    <p class="tiny-note">Guidance can be opened when needed. The page does not submit or save answers.</p>
-  </div></aside>
+  </div>
+</div></section>
+<div class="wrap main">
+  <div class="script-reminder" role="note"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-book"></use></svg><p><strong>Keep the original script open.</strong> All page and line references refer to the GoodNotes class edition. Evidence and interpretations belong in your own notes.</p></div>
   <main class="content" id="analysis-main">
     <section class="step active" id="step-1" aria-labelledby="s1-title"><div class="paper">
-      <div class="cp-top"><div class="cp-badge"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-dialogue"></use></svg><span>UNDERSTAND</span></div><div class="cp-copy"><p class="eyebrow">Step 01 / 04</p><h2 id="s1-title">What is said?</h2><p class="sub">Understanding the conflict before analysing its presentation</p></div></div>
+      <div class="cp-top"><div class="cp-badge" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><use href="#ico-dialogue"></use></svg></div><div class="cp-copy"><p class="eyebrow">Step 01 / 04</p><h2 id="s1-title">What is said?</h2><p class="sub">Understanding the conflict before analysing its presentation</p></div></div>
       <p class="lead">Before examining individual techniques, find out <strong>what is at stake</strong>. A conflict becomes meaningful when we understand what the characters want from each other — and why they may not be able to provide it.</p>
       <div class="cue cue-stair">
         <p class="lbl"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-book"></use></svg>Read &amp; explore</p>
@@ -153,10 +206,10 @@ details summary{color:var(--navy)}
         </div>
       </div>
       <details><summary><span class="summary-label"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-lightbulb"></use></svg>Need a small nudge?</span></summary><div class="hint"><p>Look at two or three consecutive speaking turns. What does one character try to communicate? How does the other respond? What might this exchange reveal? Base your interpretation on the interaction rather than an assumption.</p></div></details>
-      <div class="bar"><button class="printer" type="button" onclick="window.print()">Print / Save as PDF</button><button class="primary" type="button" data-next>Go to Step 2 →</button></div>
+      
     </div></section>
     <section class="step" id="step-2" aria-labelledby="s2-title"><div class="paper">
-      <div class="cp-top"><div class="cp-badge"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-search"></use></svg><span>ANALYSE</span></div><div class="cp-copy"><p class="eyebrow">Step 02 / 04</p><h2 id="s2-title">How is it said?</h2><p class="sub">Looking closely at interaction, language and stage directions</p></div></div>
+      <div class="cp-top"><div class="cp-badge" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><use href="#ico-search"></use></svg></div><div class="cp-copy"><p class="eyebrow">Step 02 / 04</p><h2 id="s2-title">How is it said?</h2><p class="sub">Looking closely at interaction, language and stage directions</p></div></div>
       <p class="lead">A dramatic dialogue works through <strong>responses</strong>. To analyse it, look at how a statement is answered, ignored, challenged or repeated — and what happens as a result.</p>
       <h3>Close Reading A · Who gets heard?</h3>
       <div class="cue"><p class="lbl"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-search"></use></svg>Focus on turn-taking</p><p><strong>Turn-taking</strong> is the pattern of speaking turns: who speaks at length, who responds briefly, whether speakers engage with each other and how control of the exchange shifts.</p><div class="locwrap"><span class="loc">p. 8, ll. 18–35</span><span class="loc">p. 9, ll. 5–21</span></div></div>
@@ -173,10 +226,10 @@ details summary{color:var(--navy)}
       <div class="task"><span class="task-n">5</span><p><strong>Explain it:</strong> Why does the reference to the eggs become so charged? What does it suggest about what the characters are <em>really</em> arguing about?</p></div>
       <details><summary><span class="summary-label"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-lightbulb"></use></svg>Think beyond a simple interpretation</span></summary><div class="hint"><p>Walter interprets Ruth's practical response in one way. But what do her own words and actions suggest about her perspective? Your explanation should take <strong>both</strong> characters seriously.</p></div></details>
       <div class="wordbank"><strong>Useful analytical language:</strong> <em>The repetition of ... gains significance as ... / The stage direction indicating ... suggests ... / By contrasting ... with ..., Hansberry reveals ...</em></div>
-      <div class="bar"><button class="secondary" data-prev type="button">← Step 1</button><button class="primary" data-next type="button">Go to Step 3 →</button></div>
+      
     </div></section>
     <section class="step" id="step-3" aria-labelledby="s3-title"><div class="paper">
-      <div class="cp-top"><div class="cp-badge"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-progress"></use></svg><span>TRACE</span></div><div class="cp-copy"><p class="eyebrow">Step 03 / 04</p><h2 id="s3-title">How does it develop?</h2><p class="sub">Tracing the dynamics of the conversation — and exploring independently</p></div></div>
+      <div class="cp-top"><div class="cp-badge" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><use href="#ico-progress"></use></svg></div><div class="cp-copy"><p class="eyebrow">Step 03 / 04</p><h2 id="s3-title">How does it develop?</h2><p class="sub">Tracing the dynamics of the conversation — and exploring independently</p></div></div>
       <p class="lead">Dramatic conflicts are rarely static. A conversation may begin with everyday remarks, shift into personal accusations or reach a moment when the tension becomes impossible to ignore. <strong>Trace the progression rather than listing isolated devices.</strong></p>
       <h3>Map the conversation</h3>
       <div class="twobox"><div><strong>Earlier in the exchange</strong><p>What is being discussed, and how do the characters respond to one another? <span class="loc">p. 8, ll. 18–35</span></p></div><div><strong>Later in the exchange</strong><p>What has changed in the characters' language, reactions or stage directions? <span class="loc">p. 10, ll. 1–35</span></p></div></div>
@@ -186,10 +239,10 @@ details summary{color:var(--navy)}
       <div class="task"><span class="task-n">4</span><p>Does the exchange contain a meaningful <strong>turning point</strong> — a moment after which the interaction takes a different direction? If so, justify your choice. If not, explain how the tension develops more gradually.</p></div>
       <details><summary><span class="summary-label"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-lightbulb"></use></svg>Need possible places to revisit?</span></summary><div class="hint"><p>You could examine Ruth's longer response near the end, Walter's statements about men and women, or the final stage directions describing Ruth's actions. Choose only what supports your interpretation.</p></div></details>
       <div class="cue"><p class="lbl"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-lightbulb"></use></svg>Think critically</p><p>Has either character's position changed by the end — or have their conflicting expectations become clearer? Both are possible findings; support your answer with the text.</p></div>
-      <div class="bar"><button class="secondary" data-prev type="button">← Step 2</button><button class="primary" data-next type="button">Go to Step 4 →</button></div>
+      
     </div></section>
     <section class="step" id="step-4" aria-labelledby="s4-title"><div class="paper">
-      <div class="cp-top"><div class="cp-badge"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-share"></use></svg><span>TRANSFER</span></div><div class="cp-copy"><p class="eyebrow">Step 04 / 04 · Prepare at home</p><h2 id="s4-title">Step back &amp; teach</h2><p class="sub">Bring your analysis together — and make your group's insight useful to others</p></div></div>
+      <div class="cp-top"><div class="cp-badge" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><use href="#ico-share"></use></svg></div><div class="cp-copy"><p class="eyebrow">Step 04 / 04 · Prepare at home</p><h2 id="s4-title">Step back &amp; teach</h2><p class="sub">Bring your analysis together — and make your group's insight useful to others</p></div></div>
       <p class="lead">The other groups have examined different family conflicts. Your job is to explain <strong>what makes Walter and Ruth's conflict distinctive</strong> and demonstrate an analytical approach the others can use in their own scenes.</p>
       <h3>Part A · What is this conflict really about?</h3>
       <div class="task"><span class="task-n">1</span><p>Complete this idea in your own words: <em>What initially looks like a disagreement about _______ also reveals a conflict about _______.</em> You may challenge this formulation if the evidence suggests a different emphasis.</p></div>
@@ -202,7 +255,7 @@ details summary{color:var(--navy)}
       <div class="twobox"><div><span class="badge">Your scene</span><p>A clear conflict statement with 2–3 carefully chosen references to the script.</p></div><div><span class="badge">Your method</span><p>One transferable analytical insight, explained through a concrete textual example.</p></div></div>
       <details><summary><span class="summary-label"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-pen"></use></svg>Optional: useful ways to introduce your conclusion</span></summary><div class="hint"><p><em>The underlying tension between Walter and Ruth concerns ...</em></p><p><em>Hansberry makes this tension increasingly apparent through ...</em></p><p><em>Our analysis shows why it is useful to examine ... when analysing dramatic dialogue.</em></p></div></details>
       <p class="closing"><span class="dot"></span><strong>No completed model answer is provided.</strong> Your interpretation should grow out of your own evidence and reasoning.</p>
-      <div class="bar"><button class="secondary" data-prev type="button">← Step 3</button><button class="printer" type="button" onclick="window.print()">Print all steps</button><button class="primary" data-restart type="button">Back to start ↺</button></div>
+      
     </div></section>
   </main>
 </div>
@@ -213,11 +266,8 @@ details summary{color:var(--navy)}
 const nav=Array.from(document.querySelectorAll('[data-jump]'));
 const steps=Array.from(document.querySelectorAll('.step'));
 let index=0;
-function show(i,scroll=true){index=Math.max(0,Math.min(steps.length-1,i));steps.forEach((x,k)=>{const active=k===index;x.classList.toggle('active',active);x.setAttribute('aria-hidden',String(!active))});nav.forEach((x,k)=>{x.classList.toggle('active',k===index);if(k===index)x.setAttribute('aria-current','step');else x.removeAttribute('aria-current')});if(scroll){const m=document.getElementById('analysis-main');let y=m.getBoundingClientRect().top+window.scrollY-14;window.scrollTo({top:y,behavior:'smooth'})}}
+function show(i,scroll=true){index=Math.max(0,Math.min(steps.length-1,i));steps.forEach((x,k)=>{const active=k===index;x.classList.toggle('active',active);x.setAttribute('aria-hidden',String(!active))});nav.forEach((x,k)=>{x.classList.toggle('active',k===index);if(k===index)x.setAttribute('aria-current','step');else x.removeAttribute('aria-current')});if(scroll){const m=document.getElementById('analysis-main');const sticky=document.querySelector('.map-identity');const offset=(sticky?sticky.offsetHeight:0)+12;let y=m.getBoundingClientRect().top+window.scrollY-offset;window.scrollTo({top:Math.max(0,y),behavior:'smooth'})}}
 nav.forEach((el,k)=>el.addEventListener('click',()=>show(k)));
-document.querySelectorAll('[data-next]').forEach(b=>b.addEventListener('click',()=>show(index+1)));
-document.querySelectorAll('[data-prev]').forEach(b=>b.addEventListener('click',()=>show(index-1)));
-document.querySelectorAll('[data-restart]').forEach(b=>b.addEventListener('click',()=>show(0)));
 show(0,false);
 })();
 </script>
