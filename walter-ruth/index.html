@@ -15,9 +15,9 @@
 /* ═══ American Promise visual system: supplied header + drama map ═══ */
 :root{--navy:#122e56;--navy2:#23456d;--ink:#1e293b;--muted:#586576;--line:#dfe2e3;--cream:#f6f4ed;--paper:#fff;--orange:#bb292a;--accent:#b53231;--pale:#f9eee9;--blue:#edf2f7;--green:#5b6852;--bg:#f5f5f3;--shadow:0 7px 26px rgba(18,46,86,.055)}
 body{background:var(--bg)}
-.series-header{width:100%;background:#fff;border-bottom:1px solid #e3e3e3}
-.series-banner{width:100%;height:auto;display:block;object-fit:contain;}
-.map-identity{background:#fff;border-bottom:4px solid #ad2629;box-shadow:0 8px 21px rgba(18,46,86,.035)}
+.series-header{width:100%;background:#fff;border:0}
+.series-banner{width:min(100%,1040px);height:auto;display:block;object-fit:contain;margin:0 auto;}
+.map-identity{background:#fff;border:0;box-shadow:none}
 .map-identity-inner{display:flex;justify-content:space-between;align-items:center;gap:28px;padding-top:23px;padding-bottom:25px}
 .identity-copy{max-width:820px}
 .identity-kicker{display:flex;align-items:center;gap:8px;font-size:.73rem;letter-spacing:.15em;font-weight:850;color:#9a292c;margin:0 0 4px;text-transform:uppercase}
@@ -71,7 +71,7 @@ details summary{color:var(--navy)}
 .footer{background:#152f51}
 @media(max-width:900px){.map-identity-inner{padding-top:19px;padding-bottom:20px}.identity-number{width:90px;height:100px}.identity-number strong{font-size:2.2rem}.cp-badge{min-height:81px;width:81px}.cp-badge .icon{width:34px;height:34px}}
 @media(max-width:600px){.identity-description{font-size:.84rem}.identity-number{display:none}.identity-sub{font-size:1rem}.cp-top{gap:13px}.cp-badge{width:64px;min-height:74px}.cp-badge .icon{width:29px;height:29px}.cp-badge span{font-size:.49rem}.cp-copy .sub{font-size:.84rem}.step-nav .num{width:28px;height:28px}.step-nav .num .icon{width:16px;height:16px}.step-nav button{gap:7px}.map-identity-inner{padding-top:16px;padding-bottom:18px}}
-@media print{.series-header{border:0}.series-banner{max-height:250px;object-fit:contain;object-position:left;page-break-inside:avoid}.map-identity{border-bottom:1px solid #aaa}.map-identity-inner{padding:5px 0 12px}.identity-description,.identity-number{display:none}.cp-top{break-inside:avoid}}
+@media print{.series-header{border:0}.series-banner{max-height:250px;object-fit:contain;object-position:left;page-break-inside:avoid}.map-identity{border-bottom:0}.map-identity-inner{padding:5px 0 12px}.identity-description,.identity-number{display:none}.cp-top{break-inside:avoid}}
 
 </style>
 </head>
@@ -95,7 +95,7 @@ details summary{color:var(--navy)}
   <div class="identity-copy">
     <p class="identity-kicker"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-dialogue"></use></svg> ANALYSIS MAP 01 <span class="identity-separator">/</span> ACT I, SCENE I</p>
     <h1 id="map-title">Walter <span class="identity-amp">&amp;</span> Ruth</h1>
-    <p class="identity-sub">When Dreams Meet Everyday Life</p>
+    
     <p class="identity-description">A guided close reading of one family conflict. Follow the exchanges, examine the evidence and prepare to share what your scene reveals about dramatic dialogue.</p>
     <div class="identity-chips"><span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-book"></use></svg> pp. 8–10</span><span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-pin"></use></svg> p. 8, l. 15 – p. 10, l. 35</span><span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-notes"></use></svg> Keep your notes in GoodNotes</span></div>
   </div>
