@@ -189,6 +189,9 @@ details summary{color:var(--navy)}
 .focus-cue .lbl{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
 .focus-cue .lbl .inline-help{font-size:inherit;line-height:inherit;letter-spacing:inherit;text-transform:inherit;font-weight:inherit}
 .focus-cue .lbl .inline-help-trigger{font:inherit;font-size:inherit;line-height:inherit;letter-spacing:inherit;text-transform:inherit;font-weight:inherit;font-style:normal;color:inherit;vertical-align:baseline}
+/* Tooltip prose must not inherit the uppercase, tracking or weight of the focus label. */
+.focus-cue .lbl .inline-help-popup{text-transform:none;letter-spacing:normal;font:400 .85rem/1.55 system-ui,-apple-system,"Segoe UI",Arial,sans-serif;text-align:left;}
+.focus-cue .lbl .inline-help-popup strong{font-weight:750;letter-spacing:normal;}
 .focus-cue .lbl .help-glyph{font-size:1em}
 .focus-cue .focus-route{margin-top:12px}
 .focus-cue .method{margin:13px 0 17px}
