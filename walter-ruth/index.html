@@ -266,6 +266,14 @@ details summary{color:var(--navy)}
 .vocab-help .inline-help-trigger{font-weight:400;font-style:normal;color:inherit;border-bottom:1px dotted #8a9bac;padding-bottom:0;letter-spacing:inherit;text-transform:inherit}
 .vocab-help .inline-help-trigger:hover,.vocab-help .inline-help-trigger:focus-visible{font-weight:400;color:var(--navy);border-bottom-color:#a42c34}
 @media print{.vocab-help .inline-help-trigger{font-weight:400;font-style:normal}}
+/* Keep inline skill explanations visible beyond the toolkit's rounded accordion.
+   The default details rule uses overflow:hidden, which clipped tooltips. */
+.language-cue .language-toolkit[open]{overflow:visible;position:relative;z-index:5}
+.language-cue .language-toolkit[open] .language-toolkit-body,
+.language-cue .language-toolkit[open] .toolkit-viewport,
+.language-cue .language-toolkit[open] .toolkit-slide{overflow:visible}
+.language-cue .language-toolkit #tip-figurative{z-index:90}
+
 </style>
 </head>
 <body>
