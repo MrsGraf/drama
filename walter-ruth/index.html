@@ -20,7 +20,7 @@ body{background:var(--bg)}
 .map-identity{background:#fff;border:0;box-shadow:none}
 .map-identity-inner{display:flex;justify-content:space-between;align-items:center;gap:28px;padding-top:23px;padding-bottom:25px}
 .identity-copy{max-width:820px}
-.identity-kicker{display:flex;align-items:center;gap:8px;font-size:.73rem;letter-spacing:.15em;font-weight:850;color:#9a292c;margin:0 0 4px;text-transform:uppercase}
+.identity-kicker{display:flex;align-items:center;gap:8px;font-size:.73rem;letter-spacing:.15em;font-weight:850;color:#9a292c;margin:0 0 17px;text-transform:uppercase}
 .identity-separator{color:#9aa2aa;margin:0 4px}
 .map-identity h1{color:#1b2d43;margin:0;font-size:clamp(1.85rem,3.3vw,2.75rem);letter-spacing:-.035em;line-height:1.12;font-weight:850}
 .identity-amp{font-weight:550;color:#b52e32}
@@ -73,6 +73,20 @@ details summary{color:var(--navy)}
 @media(max-width:600px){.identity-description{font-size:.84rem}.identity-number{display:none}.identity-sub{font-size:1rem}.cp-top{gap:13px}.cp-badge{width:64px;min-height:74px}.cp-badge .icon{width:29px;height:29px}.cp-badge span{font-size:.49rem}.cp-copy .sub{font-size:.84rem}.step-nav .num{width:28px;height:28px}.step-nav .num .icon{width:16px;height:16px}.step-nav button{gap:7px}.map-identity-inner{padding-top:16px;padding-bottom:18px}}
 @media print{.series-header{border:0}.series-banner{max-height:250px;object-fit:contain;object-position:left;page-break-inside:avoid}.map-identity{border-bottom:0}.map-identity-inner{padding:5px 0 12px}.identity-description,.identity-number{display:none}.cp-top{break-inside:avoid}}
 
+
+/* Step 1: a visual thinking route, rather than a second numbered task list */
+.cue-stair{padding:20px 22px 23px}
+.cue-stair>.lbl{margin-bottom:7px}
+.cue-stair>.reading-note{margin:0 0 17px}
+.analysis-stair{display:flex;flex-direction:column;gap:0}
+.stair-card{background:#fff;border:1px solid #d5dfe7;border-radius:6px;padding:13px 16px}
+.stair-card.indent-1{margin-left:13px}
+.stair-card.indent-2{margin-left:26px}
+.stair-label{color:var(--navy);font-weight:800;display:flex;align-items:center;gap:9px;margin:0 0 5px}
+.stair-label .icon{width:19px;height:19px;color:#a42b32}
+.stair-card p{margin:0!important}
+.stair-arrow{display:flex;align-items:center;justify-content:center;height:30px;color:#a32e34;font-size:25px;font-weight:700;line-height:1}
+@media(max-width:520px){.cue-stair{padding:16px}.stair-card.indent-1{margin-left:8px}.stair-card.indent-2{margin-left:16px}}
 </style>
 </head>
 <body>
@@ -104,11 +118,11 @@ details summary{color:var(--navy)}
 <div class="wrap main">
   <aside class="side"><div class="side-card">
     <p class="side-title">Your analysis route</p>
-    <nav class="step-nav" aria-label="Analysis checkpoints">
-      <button type="button" data-jump="0" class="active"><span class="num"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-dialogue"></use></svg><span class="sr-only">Checkpoint 1</span></span><span>What is said?</span></button>
-      <button type="button" data-jump="1"><span class="num"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-search"></use></svg><span class="sr-only">Checkpoint 2</span></span><span>How is it said?</span></button>
-      <button type="button" data-jump="2"><span class="num"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-progress"></use></svg><span class="sr-only">Checkpoint 3</span></span><span>How does it develop?</span></button>
-      <button type="button" data-jump="3"><span class="num"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-share"></use></svg><span class="sr-only">Checkpoint 4</span></span><span>Step back &amp; teach</span></button>
+    <nav class="step-nav" aria-label="Analysis steps">
+      <button type="button" data-jump="0" class="active"><span class="num"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-dialogue"></use></svg><span class="sr-only">Step 1</span></span><span>What is said?</span></button>
+      <button type="button" data-jump="1"><span class="num"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-search"></use></svg><span class="sr-only">Step 2</span></span><span>How is it said?</span></button>
+      <button type="button" data-jump="2"><span class="num"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-progress"></use></svg><span class="sr-only">Step 3</span></span><span>How does it develop?</span></button>
+      <button type="button" data-jump="3"><span class="num"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-share"></use></svg><span class="sr-only">Step 4</span></span><span>Step back &amp; teach</span></button>
     </nav>
     <hr class="side-divider">
     <div class="side-ref"><strong>Keep the original script open.</strong><br>All page and line references refer to the annotated 92-page class edition. Evidence and interpretations belong in your own notes.</div>
@@ -116,18 +130,33 @@ details summary{color:var(--navy)}
   </div></aside>
   <main class="content" id="analysis-main">
     <section class="step active" id="step-1" aria-labelledby="s1-title"><div class="paper">
-      <div class="cp-top"><div class="cp-badge"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-dialogue"></use></svg><span>UNDERSTAND</span></div><div class="cp-copy"><p class="eyebrow">Checkpoint 01 / 04</p><h2 id="s1-title">What is said?</h2><p class="sub">Understanding the conflict before analysing its presentation</p></div></div>
+      <div class="cp-top"><div class="cp-badge"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-dialogue"></use></svg><span>UNDERSTAND</span></div><div class="cp-copy"><p class="eyebrow">Step 01 / 04</p><h2 id="s1-title">What is said?</h2><p class="sub">Understanding the conflict before analysing its presentation</p></div></div>
       <p class="lead">Before examining individual techniques, find out <strong>what is at stake</strong>. A conflict becomes meaningful when we understand what the characters want from each other — and why they may not be able to provide it.</p>
-      <div class="cue"><p class="lbl"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-book"></use></svg>Your reading</p><p>Read the complete exchange between Walter and Ruth. Focus on their concerns and expectations rather than collecting character traits.</p><div class="locwrap"><span class="loc">p. 8, ll. 2–35</span><span class="loc">p. 9, ll. 1–38</span><span class="loc">p. 10, ll. 1–35</span></div></div>
-      <div class="task"><span class="task-n">1</span><p><strong>Two different concerns:</strong> What does Walter want Ruth to understand or do? What appears to matter most to Ruth in this situation? Make short notes for both perspectives.</p></div>
-      <div class="task"><span class="task-n">2</span><p><strong>Behind the disagreement:</strong> What causes their frustration? Distinguish the <em>immediate topic</em> of the argument from any deeper expectations or pressures.</p></div>
-      <div class="task"><span class="task-n">3</span><p><strong>First evidence:</strong> Mark one line for each character that helps explain their position. Record the page and line numbers.</p></div>
-      <details><summary><span class="summary-label"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-lightbulb"></use></svg>Need a small nudge?</span></summary><div class="hint"><p>Think about Walter's plans, Ruth's daily responsibilities and the way both respond to not feeling understood. Avoid deciding too early which character is 'right'.</p></div></details>
-      <div class="cue warm"><p class="lbl"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-lightbulb"></use></svg>Keep this question in mind</p><p>Is the argument simply about Walter's business idea — or also about what he and Ruth expect from their marriage?</p></div>
-      <div class="bar"><button class="printer" type="button" onclick="window.print()">Print / Save as PDF</button><button class="primary" type="button" data-next>Go to Checkpoint 2 →</button></div>
+      <div class="cue cue-stair">
+        <p class="lbl"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-book"></use></svg>Read &amp; explore</p>
+        <p class="reading-note">Read the complete exchange between Walter and Ruth. Work through the following questions in order and make notes on your findings.</p>
+        <div class="analysis-stair" aria-label="Three connected stages of understanding the conflict">
+          <div class="stair-card">
+            <div class="stair-label"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-dialogue"></use></svg>Identify the different perspectives</div>
+            <p>What does Walter want Ruth to understand or do? What appears to matter most to Ruth in this situation?</p>
+          </div>
+          <div class="stair-arrow" aria-hidden="true">↓</div>
+          <div class="stair-card indent-1">
+            <div class="stair-label"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-search"></use></svg>Look beneath the disagreement</div>
+            <p>What causes their frustration? Distinguish the <em>immediate topic</em> of the argument from any deeper expectations or pressures.</p>
+          </div>
+          <div class="stair-arrow" aria-hidden="true">↓</div>
+          <div class="stair-card indent-2">
+            <div class="stair-label"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-book"></use></svg>Support your findings</div>
+            <p>Find one revealing statement for each character. Record the page and line numbers.</p>
+          </div>
+        </div>
+      </div>
+      <details><summary><span class="summary-label"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-lightbulb"></use></svg>Need a small nudge?</span></summary><div class="hint"><p>Look at two or three consecutive speaking turns. What does one character try to communicate? How does the other respond? What might this exchange reveal? Base your interpretation on the interaction rather than an assumption.</p></div></details>
+      <div class="bar"><button class="printer" type="button" onclick="window.print()">Print / Save as PDF</button><button class="primary" type="button" data-next>Go to Step 2 →</button></div>
     </div></section>
     <section class="step" id="step-2" aria-labelledby="s2-title"><div class="paper">
-      <div class="cp-top"><div class="cp-badge"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-search"></use></svg><span>ANALYSE</span></div><div class="cp-copy"><p class="eyebrow">Checkpoint 02 / 04</p><h2 id="s2-title">How is it said?</h2><p class="sub">Looking closely at interaction, language and stage directions</p></div></div>
+      <div class="cp-top"><div class="cp-badge"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-search"></use></svg><span>ANALYSE</span></div><div class="cp-copy"><p class="eyebrow">Step 02 / 04</p><h2 id="s2-title">How is it said?</h2><p class="sub">Looking closely at interaction, language and stage directions</p></div></div>
       <p class="lead">A dramatic dialogue works through <strong>responses</strong>. To analyse it, look at how a statement is answered, ignored, challenged or repeated — and what happens as a result.</p>
       <h3>Close Reading A · Who gets heard?</h3>
       <div class="cue"><p class="lbl"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-search"></use></svg>Focus on turn-taking</p><p><strong>Turn-taking</strong> is the pattern of speaking turns: who speaks at length, who responds briefly, whether speakers engage with each other and how control of the exchange shifts.</p><div class="locwrap"><span class="loc">p. 8, ll. 18–35</span><span class="loc">p. 9, ll. 5–21</span></div></div>
@@ -144,23 +173,23 @@ details summary{color:var(--navy)}
       <div class="task"><span class="task-n">5</span><p><strong>Explain it:</strong> Why does the reference to the eggs become so charged? What does it suggest about what the characters are <em>really</em> arguing about?</p></div>
       <details><summary><span class="summary-label"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-lightbulb"></use></svg>Think beyond a simple interpretation</span></summary><div class="hint"><p>Walter interprets Ruth's practical response in one way. But what do her own words and actions suggest about her perspective? Your explanation should take <strong>both</strong> characters seriously.</p></div></details>
       <div class="wordbank"><strong>Useful analytical language:</strong> <em>The repetition of ... gains significance as ... / The stage direction indicating ... suggests ... / By contrasting ... with ..., Hansberry reveals ...</em></div>
-      <div class="bar"><button class="secondary" data-prev type="button">← Checkpoint 1</button><button class="primary" data-next type="button">Go to Checkpoint 3 →</button></div>
+      <div class="bar"><button class="secondary" data-prev type="button">← Step 1</button><button class="primary" data-next type="button">Go to Step 3 →</button></div>
     </div></section>
     <section class="step" id="step-3" aria-labelledby="s3-title"><div class="paper">
-      <div class="cp-top"><div class="cp-badge"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-progress"></use></svg><span>TRACE</span></div><div class="cp-copy"><p class="eyebrow">Checkpoint 03 / 04</p><h2 id="s3-title">How does it develop?</h2><p class="sub">Tracing the dynamics of the conversation — and exploring independently</p></div></div>
+      <div class="cp-top"><div class="cp-badge"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-progress"></use></svg><span>TRACE</span></div><div class="cp-copy"><p class="eyebrow">Step 03 / 04</p><h2 id="s3-title">How does it develop?</h2><p class="sub">Tracing the dynamics of the conversation — and exploring independently</p></div></div>
       <p class="lead">Dramatic conflicts are rarely static. A conversation may begin with everyday remarks, shift into personal accusations or reach a moment when the tension becomes impossible to ignore. <strong>Trace the progression rather than listing isolated devices.</strong></p>
       <h3>Map the conversation</h3>
-      <div class="twobox"><div><strong>Earlier in the exchange</strong><p>Walter tries to introduce his plans, while Ruth responds to him in different ways. <span class="loc">p. 8, ll. 18–35</span></p></div><div><strong>Later in the exchange</strong><p>Walter's emotional reaction intensifies, and both characters express deeper grievances. <span class="loc">p. 10, ll. 1–35</span></p></div></div>
+      <div class="twobox"><div><strong>Earlier in the exchange</strong><p>What is being discussed, and how do the characters respond to one another? <span class="loc">p. 8, ll. 18–35</span></p></div><div><strong>Later in the exchange</strong><p>What has changed in the characters' language, reactions or stage directions? <span class="loc">p. 10, ll. 1–35</span></p></div></div>
       <div class="task"><span class="task-n">1</span><p>Describe <strong>two or three phases</strong> of the conversation in your own words. At what point does the exchange noticeably change direction or intensity?</p></div>
       <div class="task"><span class="task-n">2</span><p><strong>Explore on your own:</strong> Find two <em>additional</em> revealing details that you have not yet analysed closely. Choose at least one example involving <strong>interaction or stage directions</strong> and one involving <strong>language or tone</strong>.</p></div>
       <div class="task"><span class="task-n">3</span><p>Use <strong>Name it → Prove it → Explain it</strong> for both details. How do they contribute to the progression of the conflict?</p></div>
       <div class="task"><span class="task-n">4</span><p>Does the exchange contain a meaningful <strong>turning point</strong> — a moment after which the interaction takes a different direction? If so, justify your choice. If not, explain how the tension develops more gradually.</p></div>
       <details><summary><span class="summary-label"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-lightbulb"></use></svg>Need possible places to revisit?</span></summary><div class="hint"><p>You could examine Ruth's longer response near the end, Walter's statements about men and women, or the final stage directions describing Ruth's actions. Choose only what supports your interpretation.</p></div></details>
       <div class="cue"><p class="lbl"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-lightbulb"></use></svg>Think critically</p><p>Has either character's position changed by the end — or have their conflicting expectations become clearer? Both are possible findings; support your answer with the text.</p></div>
-      <div class="bar"><button class="secondary" data-prev type="button">← Checkpoint 2</button><button class="primary" data-next type="button">Go to Checkpoint 4 →</button></div>
+      <div class="bar"><button class="secondary" data-prev type="button">← Step 2</button><button class="primary" data-next type="button">Go to Step 4 →</button></div>
     </div></section>
     <section class="step" id="step-4" aria-labelledby="s4-title"><div class="paper">
-      <div class="cp-top"><div class="cp-badge"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-share"></use></svg><span>TRANSFER</span></div><div class="cp-copy"><p class="eyebrow">Checkpoint 04 / 04 · Prepare at home</p><h2 id="s4-title">Step back &amp; teach</h2><p class="sub">Bring your analysis together — and make your group's insight useful to others</p></div></div>
+      <div class="cp-top"><div class="cp-badge"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-share"></use></svg><span>TRANSFER</span></div><div class="cp-copy"><p class="eyebrow">Step 04 / 04 · Prepare at home</p><h2 id="s4-title">Step back &amp; teach</h2><p class="sub">Bring your analysis together — and make your group's insight useful to others</p></div></div>
       <p class="lead">The other groups have examined different family conflicts. Your job is to explain <strong>what makes Walter and Ruth's conflict distinctive</strong> and demonstrate an analytical approach the others can use in their own scenes.</p>
       <h3>Part A · What is this conflict really about?</h3>
       <div class="task"><span class="task-n">1</span><p>Complete this idea in your own words: <em>What initially looks like a disagreement about _______ also reveals a conflict about _______.</em> You may challenge this formulation if the evidence suggests a different emphasis.</p></div>
@@ -173,7 +202,7 @@ details summary{color:var(--navy)}
       <div class="twobox"><div><span class="badge">Your scene</span><p>A clear conflict statement with 2–3 carefully chosen references to the script.</p></div><div><span class="badge">Your method</span><p>One transferable analytical insight, explained through a concrete textual example.</p></div></div>
       <details><summary><span class="summary-label"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-pen"></use></svg>Optional: useful ways to introduce your conclusion</span></summary><div class="hint"><p><em>The underlying tension between Walter and Ruth concerns ...</em></p><p><em>Hansberry makes this tension increasingly apparent through ...</em></p><p><em>Our analysis shows why it is useful to examine ... when analysing dramatic dialogue.</em></p></div></details>
       <p class="closing"><span class="dot"></span><strong>No completed model answer is provided.</strong> Your interpretation should grow out of your own evidence and reasoning.</p>
-      <div class="bar"><button class="secondary" data-prev type="button">← Checkpoint 3</button><button class="printer" type="button" onclick="window.print()">Print all checkpoints</button><button class="primary" data-restart type="button">Back to start ↺</button></div>
+      <div class="bar"><button class="secondary" data-prev type="button">← Step 3</button><button class="printer" type="button" onclick="window.print()">Print all steps</button><button class="primary" data-restart type="button">Back to start ↺</button></div>
     </div></section>
   </main>
 </div>
