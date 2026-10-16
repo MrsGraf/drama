@@ -213,6 +213,34 @@ details summary{color:var(--navy)}
 .language-cue .stair-label{letter-spacing:.06em;font-size:.84rem}
 .hint-phrases-title{margin:14px 0 6px!important;color:var(--navy);padding-top:10px;border-top:1px solid #dce4e3}
 
+/* Optional drama-language toolbox adapted from the shared speech-analysis method sheet. */
+.language-cue .language-toolkit{margin:14px 0 19px;border-color:#d2dce4;background:#fff}
+.language-cue .language-toolkit>summary{background:#f8fafc;padding:11px 15px;color:var(--navy);font-size:.85rem}
+.language-cue .language-toolkit .summary-label{align-items:center;gap:8px}
+.language-cue .language-toolkit .summary-label .icon{color:#a92f36;width:18px;height:18px}
+.language-cue .language-toolkit-body{padding:13px 18px 17px;font-size:.88rem;line-height:1.52}
+.language-cue .language-toolkit-body .toolkit-intro{color:#40536a;margin:0 0 10px}
+.toolkit-section{margin-top:17px}
+.toolkit-section h4{font-size:.92rem;line-height:1.35;color:var(--navy);margin:0 0 9px;padding-bottom:5px;border-bottom:1px solid #d8e2ea}
+.toolkit-section ul{padding-left:21px;margin:0}
+.toolkit-section li{margin:5px 0}
+.toolkit-section li::marker{color:#ab3037}
+.toolkit-section p{margin:0 0 10px}
+.toolkit-tone-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:12px 0 13px}
+.toolkit-tone-item{padding:11px 12px;border-radius:4px;border:1px solid #d9e0e5;border-top:3px solid #8a9caa;background:#f8fafb;min-width:0}
+.toolkit-tone-item strong{display:block;font-size:.81rem;line-height:1.33;color:#15385e;margin-bottom:5px}
+.toolkit-tone-item span{display:block;font-size:.76rem;line-height:1.42;color:#485b70}
+.toolkit-tone-item.tone-positive{background:#f0f5ed;border-top-color:#5f835d}
+.toolkit-tone-item.tone-playful{background:#f3f6ef;border-top-color:#80966b}
+.toolkit-tone-item.tone-personal{background:#fbf1eb;border-top-color:#b88163}
+.toolkit-tone-item.tone-concerned{background:#f9f4df;border-top-color:#ae9040}
+.toolkit-tone-item.tone-mocking{background:#edf2f8;border-top-color:#6681ab}
+.toolkit-tone-item.tone-angry{background:#f8edef;border-top-color:#a94857}
+.toolkit-principle{background:#f2f6f9;border-left:3px solid var(--navy);padding:9px 12px;margin-top:12px!important}
+.toolkit-closing{padding:9px 12px;background:#f5f6f4;border-left:3px solid #b02f35;margin:17px 0 0!important}
+@media(max-width:800px){.toolkit-tone-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:480px){.toolkit-tone-grid{grid-template-columns:1fr}.language-cue .language-toolkit-body{padding:11px 13px}.toolkit-tone-item{padding:9px 11px}}
+
 </style>
 </head>
 <body>
@@ -296,7 +324,48 @@ details summary{color:var(--navy)}
       <div class="cue cue-stair language-cue">
         <p class="lbl"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-search"></use></svg>Follow one recurring expression</p>
         <p>Track Ruth's reference to the eggs and Walter's responses. Notice how <strong>repetition, tone and stage directions</strong> change the force of an everyday remark.</p>
-        <div class="language-lens"><strong>Language lens</strong><p><b>Word choice:</b> Which words stand out, and what might they suggest? <b>Tone:</b> What attitude comes across through the wording and stage directions? <b>Repetition:</b> Does a recurring phrase gain a different meaning or force?</p></div>
+        <details class="language-toolkit">
+          <summary><span class="summary-label"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-book"></use></svg>Language toolkit · Syntax, tone &amp; word choice</span></summary>
+          <div class="hint language-toolkit-body">
+            <p class="toolkit-intro">Use these categories when they help explain the interaction. Look for evidence in the characters' words <strong>and</strong> in the stage directions.</p>
+            <section class="toolkit-section">
+              <h4>Syntax and sentence structure</h4>
+              <ul>
+                <li><strong>Short or clipped sentences</strong> may convey urgency, frustration or a reluctance to elaborate.</li>
+                <li><strong>Longer or complex sentences</strong> may allow a character to explain, justify or develop a thought.</li>
+                <li><strong>Unfinished sentences, interruptions and pauses</strong> may suggest hesitation, tension or a disrupted exchange.</li>
+                <li><strong>Parallel structures</strong> can create rhythm, connect ideas or emphasise a contrast.</li>
+              </ul>
+            </section>
+            <section class="toolkit-section">
+              <h4>Tone</h4>
+              <p><strong>Tone</strong> is the attitude or mood conveyed through a character's words and, in drama, through stage directions. Look for evidence and notice any <strong>shifts in tone</strong>.</p>
+              <div class="toolkit-tone-grid" aria-label="Possible tones to consider">
+                <div class="toolkit-tone-item tone-neutral"><strong>serious · distant · detached</strong><span>formal, factual or emotionally reserved</span></div>
+                <div class="toolkit-tone-item tone-positive"><strong>hopeful · enthusiastic</strong><span>optimistic, eager or encouraging</span></div>
+                <div class="toolkit-tone-item tone-playful"><strong>humorous · ironic · witty</strong><span>playful, teasing or expressing something indirectly</span></div>
+                <div class="toolkit-tone-item tone-personal"><strong>vulnerable · emotional</strong><span>personal, open or deeply affected</span></div>
+                <div class="toolkit-tone-item tone-concerned"><strong>concerned · worried · pessimistic</strong><span>focused on difficulties, risks or uncertainty</span></div>
+                <div class="toolkit-tone-item tone-mocking"><strong>mocking · provocative · sarcastic</strong><span>ridiculing, challenging or provoking a response</span></div>
+                <div class="toolkit-tone-item tone-angry"><strong>challenging · angry · aggressive</strong><span>confrontational, forceful or openly hostile</span></div>
+              </div>
+              <p class="toolkit-principle"><strong>Do not merely label the tone:</strong> Explain which words, sentence structures or stage directions create it, how another character responds and what this suggests about their relationship.</p>
+            </section>
+            <section class="toolkit-section">
+              <h4>Word fields and choice of words</h4>
+              <ul>
+                <li>Notice recurring groups of related words (<strong>semantic fields</strong>).</li>
+                <li>Examine positive or negative <strong>connotations</strong> and the associations they create.</li>
+                <li>Consider whether the language is <strong>formal, colloquial, simple, emotionally charged</strong> or noticeably different from the character's usual way of speaking.</li>
+              </ul>
+            </section>
+            <section class="toolkit-section">
+              <h4>Selected stylistic devices</h4>
+              <p>Watch for meaningful <strong>repetition</strong>, <strong>contrasts</strong>, <strong>irony</strong> or <strong>figurative language</strong> where they actually occur. Ask how the device affects the exchange, rather than collecting labels.</p>
+            </section>
+            <p class="toolkit-closing"><strong>From speech analysis to drama:</strong> Instead of focusing mainly on how a speaker persuades an audience, explain what the dialogue reveals about the characters, their relationship and the developing conflict.</p>
+          </div>
+        </details>
         <div class="analysis-stair" aria-label="Three connected stages of language analysis">
           <div class="stair-card"><div class="stair-label">NAME IT</div><p>What changes in the way the eggs are mentioned? Notice who repeats the words and how the characters' tone or behaviour changes.</p></div>
           <div class="stair-arrow" aria-hidden="true">↓</div>
