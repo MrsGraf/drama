@@ -318,6 +318,9 @@ details summary{color:var(--navy)}
 .writing-method-tip{font-size:.86rem;color:#3e5267;margin:13px 0 0!important;line-height:1.52}
 @media(max-width:650px){.writing-scaffold-grid{grid-template-columns:1fr}.writing-scaffold{padding:13px}.writing-phrase{padding:11px 12px}}
 
+/* Match the surrounding header to the actual off-white pixels of the supplied artwork. */
+.series-header,.map-identity{background:var(--artwork-paper-white,#fbfbfa)}
+
 </style>
 </head>
 <body>
@@ -575,6 +578,33 @@ if(toolkit){
   });
   chooseToolkit(0);
 }
+})();
+
+/* Sample blank background pixels near the lower-right of the embedded banner.
+   It is a slightly warm off-white rather than pure #fff. */
+(function matchArtworkBackground(){
+  const banner=document.querySelector('.series-banner');
+  if(!banner)return;
+  function sample(){
+    if(!banner.naturalWidth||!banner.naturalHeight)return;
+    try{
+      const canvas=document.createElement('canvas');
+      canvas.width=canvas.height=1;
+      const ctx=canvas.getContext('2d',{willReadFrequently:true});
+      if(!ctx)return;
+      const values=[[],[],[]];
+      for(const x of [.55,.64,.72,.80,.88]){
+        ctx.clearRect(0,0,1,1);
+        ctx.drawImage(banner,Math.floor(banner.naturalWidth*x),Math.floor(banner.naturalHeight*.965),1,1,0,0,1,1);
+        const pixel=ctx.getImageData(0,0,1,1).data;
+        if(pixel[3]>240)for(let k=0;k<3;k++)values[k].push(pixel[k]);
+      }
+      if(values[0].length<3)return;
+      const median=values.map(ch=>ch.sort((a,b)=>a-b)[Math.floor(ch.length/2)]);
+      document.documentElement.style.setProperty('--artwork-paper-white','rgb('+median.join(',')+')');
+    }catch(_err){ /* CSS fallback remains visible. */ }
+  }
+  if(banner.complete)sample();else banner.addEventListener('load',sample,{once:true});
 })();
 </script>
 </body>
