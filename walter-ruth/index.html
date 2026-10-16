@@ -231,7 +231,7 @@ details summary{color:var(--navy)}
 .toolkit-tone-item strong{display:block;font-size:.81rem;line-height:1.33;color:#15385e;margin-bottom:5px}
 .toolkit-tone-item span{display:block;font-size:.76rem;line-height:1.42;color:#485b70}
 .toolkit-tone-item.tone-positive{background:#f0f5ed;border-top-color:#5f835d}
-.toolkit-tone-item.tone-playful{background:#f3f6ef;border-top-color:#80966b}
+.toolkit-tone-item.tone-playful{background:#f0ebfa;border-top-color:#8265b5}
 .toolkit-tone-item.tone-personal{background:#fbf1eb;border-top-color:#b88163}
 .toolkit-tone-item.tone-concerned{background:#f9f4df;border-top-color:#ae9040}
 .toolkit-tone-item.tone-mocking{background:#edf2f8;border-top-color:#6681ab}
@@ -240,6 +240,34 @@ details summary{color:var(--navy)}
 .toolkit-closing{padding:9px 12px;background:#f5f6f4;border-left:3px solid #b02f35;margin:17px 0 0!important}
 @media(max-width:800px){.toolkit-tone-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:480px){.toolkit-tone-grid{grid-template-columns:1fr}.language-cue .language-toolkit-body{padding:11px 13px}.toolkit-tone-item{padding:9px 11px}}
+
+/* One toolkit category at a time, with an always accessible navigation/close row. */
+.language-cue .language-toolkit-body{padding:12px 15px 14px}
+.language-toolkit .toolkit-intro{font-size:.83rem;line-height:1.45;margin:0 0 10px!important}
+.toolkit-tabs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:5px;margin:0 0 10px}
+.toolkit-tabs button{min-width:0;appearance:none;padding:8px 5px;border:1px solid #d6e0e7;background:#f4f6f8;border-radius:4px;color:#354e67;font-size:.78rem;font-weight:650;line-height:1.25;cursor:pointer}
+.toolkit-tabs button[aria-selected="true"]{background:#193b60;color:#fff;border-color:#193b60;box-shadow:inset 0 -2px 0 #c74a48}
+.toolkit-tabs button:focus-visible,.toolkit-footer button:focus-visible{outline:2px solid #b03338;outline-offset:2px}
+.toolkit-slide[hidden]{display:none!important}
+.toolkit-viewport{min-height:120px}
+.toolkit-slide{margin:0!important}
+.toolkit-tone-scroll{max-height:295px;overflow-y:auto;overscroll-behavior:contain;padding:0 6px 1px 0;scrollbar-color:#a7bacb transparent}
+.toolkit-tone-grid{margin:8px 0 10px;grid-template-columns:repeat(3,minmax(0,1fr))}
+.toolkit-footer{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:7px;border-top:1px solid #dae3ea;margin-top:13px;padding-top:10px}
+.toolkit-footer button{appearance:none;border:1px solid #cdd8e2;background:#f8fafc;color:#193b60;border-radius:4px;padding:6px 10px;font-size:.78rem;line-height:1.35;cursor:pointer;font-weight:700}
+.toolkit-footer button:disabled{opacity:.35;cursor:default}
+.toolkit-footer button:not(:disabled):hover{background:#eaf0f5}
+.toolkit-counter{color:#586b7d;font-size:.76rem;font-weight:650}
+.toolkit-footer .toolkit-close{margin-left:auto;border:1px solid #b62b32;color:#a42c34;background:white}
+.toolkit-footer .toolkit-close:hover{background:#fbeff0}
+.toolkit-close span{font-size:1.08rem;line-height:.8;vertical-align:-.05em;margin-left:3px}
+.conversation-map{display:grid;grid-template-columns:minmax(0,1fr) 24px minmax(0,1fr) 24px minmax(0,1fr);align-items:stretch;gap:6px;margin:17px 0 22px}
+.conversation-map-stage{border:1px solid #d4e0e8;border-top:3px solid #294b70;border-radius:5px;padding:14px;background:#f5f8fa;text-align:center}
+.conversation-map-stage strong{display:block;color:var(--navy);font-size:.89rem;letter-spacing:.02em}
+.conversation-map-stage p{margin:6px 0 0!important;color:#4e6275;font-size:.83rem;line-height:1.42}
+.conversation-map-arrow{display:flex;align-items:center;justify-content:center;color:#aa3035;font-size:1.5rem;font-weight:700}
+@media(max-width:850px){.toolkit-tone-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.toolkit-tabs{grid-template-columns:repeat(2,minmax(0,1fr))}.toolkit-footer .toolkit-close{flex:1 1 100%;margin-left:0}.conversation-map{grid-template-columns:1fr;gap:4px}.conversation-map-arrow{font-size:1.2rem;line-height:1;min-height:17px;transform:rotate(90deg)}}
 
 </style>
 </head>
@@ -325,45 +353,61 @@ details summary{color:var(--navy)}
         <p class="lbl"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-search"></use></svg>Follow one recurring expression</p>
         <p>Track Ruth's reference to the eggs and Walter's responses. Notice how <strong>repetition, tone and stage directions</strong> change the force of an everyday remark.</p>
         <details class="language-toolkit">
-          <summary><span class="summary-label"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-book"></use></svg>Language toolkit · Syntax, tone &amp; word choice</span></summary>
+          <summary><span class="summary-label"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-book"></use></svg>Language toolkit · Syntax, tone, word choice &amp; devices</span></summary>
           <div class="hint language-toolkit-body">
-            <p class="toolkit-intro">Use these categories when they help explain the interaction. Look for evidence in the characters' words <strong>and</strong> in the stage directions.</p>
-            <section class="toolkit-section">
-              <h4>Syntax and sentence structure</h4>
-              <ul>
-                <li><strong>Short or clipped sentences</strong> may convey urgency, frustration or a reluctance to elaborate.</li>
-                <li><strong>Longer or complex sentences</strong> may allow a character to explain, justify or develop a thought.</li>
-                <li><strong>Unfinished sentences, interruptions and pauses</strong> may suggest hesitation, tension or a disrupted exchange.</li>
-                <li><strong>Parallel structures</strong> can create rhythm, connect ideas or emphasise a contrast.</li>
-              </ul>
-            </section>
-            <section class="toolkit-section">
-              <h4>Tone</h4>
-              <p><strong>Tone</strong> is the attitude or mood conveyed through a character's words and, in drama, through stage directions. Look for evidence and notice any <strong>shifts in tone</strong>.</p>
-              <div class="toolkit-tone-grid" aria-label="Possible tones to consider">
-                <div class="toolkit-tone-item tone-neutral"><strong>serious · distant · detached</strong><span>formal, factual or emotionally reserved</span></div>
-                <div class="toolkit-tone-item tone-positive"><strong>hopeful · enthusiastic</strong><span>optimistic, eager or encouraging</span></div>
-                <div class="toolkit-tone-item tone-playful"><strong>humorous · ironic · witty</strong><span>playful, teasing or expressing something indirectly</span></div>
-                <div class="toolkit-tone-item tone-personal"><strong>vulnerable · emotional</strong><span>personal, open or deeply affected</span></div>
-                <div class="toolkit-tone-item tone-concerned"><strong>concerned · worried · pessimistic</strong><span>focused on difficulties, risks or uncertainty</span></div>
-                <div class="toolkit-tone-item tone-mocking"><strong>mocking · provocative · sarcastic</strong><span>ridiculing, challenging or provoking a response</span></div>
-                <div class="toolkit-tone-item tone-angry"><strong>challenging · angry · aggressive</strong><span>confrontational, forceful or openly hostile</span></div>
-              </div>
-              <p class="toolkit-principle"><strong>Do not merely label the tone:</strong> Explain which words, sentence structures or stage directions create it, how another character responds and what this suggests about their relationship.</p>
-            </section>
-            <section class="toolkit-section">
-              <h4>Word fields and choice of words</h4>
-              <ul>
-                <li>Notice recurring groups of related words (<strong>semantic fields</strong>).</li>
-                <li>Examine positive or negative <strong>connotations</strong> and the associations they create.</li>
-                <li>Consider whether the language is <strong>formal, colloquial, simple, emotionally charged</strong> or noticeably different from the character's usual way of speaking.</li>
-              </ul>
-            </section>
-            <section class="toolkit-section">
-              <h4>Selected stylistic devices</h4>
-              <p>Watch for meaningful <strong>repetition</strong>, <strong>contrasts</strong>, <strong>irony</strong> or <strong>figurative language</strong> where they actually occur. Ask how the device affects the exchange, rather than collecting labels.</p>
-            </section>
-            <p class="toolkit-closing"><strong>From speech analysis to drama:</strong> Instead of focusing mainly on how a speaker persuades an audience, explain what the dialogue reveals about the characters, their relationship and the developing conflict.</p>
+            <p class="toolkit-intro">Explore one category at a time. Use it when it helps explain what happens <strong>between the characters</strong>.</p>
+            <div class="toolkit-tabs" role="tablist" aria-label="Language toolkit categories">
+              <button type="button" role="tab" data-toolkit-tab="0" id="toolkit-tab-syntax" aria-controls="toolkit-panel-syntax" aria-selected="true" tabindex="0">1 · Syntax</button>
+              <button type="button" role="tab" data-toolkit-tab="1" id="toolkit-tab-tone" aria-controls="toolkit-panel-tone" aria-selected="false" tabindex="-1">2 · Tone</button>
+              <button type="button" role="tab" data-toolkit-tab="2" id="toolkit-tab-words" aria-controls="toolkit-panel-words" aria-selected="false" tabindex="-1">3 · Word choice</button>
+              <button type="button" role="tab" data-toolkit-tab="3" id="toolkit-tab-devices" aria-controls="toolkit-panel-devices" aria-selected="false" tabindex="-1">4 · Devices</button>
+            </div>
+            <div class="toolkit-viewport">
+              <section class="toolkit-section toolkit-slide" role="tabpanel" id="toolkit-panel-syntax" aria-labelledby="toolkit-tab-syntax" data-toolkit-panel="0">
+                <h4>Syntax and sentence structure</h4>
+                <ul>
+                  <li><strong>Short or clipped sentences</strong> may convey urgency or frustration, or suggest that a character is <span class="inline-help"><button class="inline-help-trigger" type="button" aria-expanded="false" aria-describedby="tip-reluctant">reluctant <span class="help-glyph" aria-hidden="true">ⓘ</span></button><span class="inline-help-popup" role="tooltip" id="tip-reluctant">Unwilling or hesitant to do something — <em>zögerlich; widerwillig</em>.</span></span> to <span class="inline-help"><button class="inline-help-trigger" type="button" aria-expanded="false" aria-describedby="tip-elaborate">elaborate <span class="help-glyph" aria-hidden="true">ⓘ</span></button><span class="inline-help-popup" role="tooltip" id="tip-elaborate">To explain something in more detail — <em>etwas näher erläutern / ausführen</em>.</span></span>.</li>
+                  <li><strong>Longer or complex sentences</strong> may allow a character to explain, justify or develop a thought.</li>
+                  <li><strong>Unfinished sentences, interruptions and pauses</strong> may suggest hesitation, tension or a disrupted exchange.</li>
+                  <li><strong>Parallel structures</strong> can create rhythm, connect ideas or emphasise a contrast.</li>
+                </ul>
+              </section>
+              <section class="toolkit-section toolkit-slide toolkit-tone-slide" role="tabpanel" id="toolkit-panel-tone" aria-labelledby="toolkit-tab-tone" data-toolkit-panel="1" hidden>
+                <h4>Tone</h4>
+                <p><strong>Tone</strong> is the attitude or mood conveyed through a character's words and, in drama, through stage directions. Look for evidence and notice any <strong>shifts in tone</strong>.</p>
+                <div class="toolkit-tone-scroll">
+                  <div class="toolkit-tone-grid" aria-label="Possible tones to consider">
+                    <div class="toolkit-tone-item tone-neutral"><strong>serious · distant · detached</strong><span>formal, factual or emotionally reserved</span></div>
+                    <div class="toolkit-tone-item tone-positive"><strong>hopeful · enthusiastic</strong><span>optimistic, eager or encouraging</span></div>
+                    <div class="toolkit-tone-item tone-playful"><strong>humorous · ironic · witty</strong><span>playful, teasing or expressing something indirectly</span></div>
+                    <div class="toolkit-tone-item tone-personal"><strong>vulnerable · emotional</strong><span>personal, open or deeply affected</span></div>
+                    <div class="toolkit-tone-item tone-concerned"><strong>concerned · worried · pessimistic</strong><span>focused on difficulties, risks or uncertainty</span></div>
+                    <div class="toolkit-tone-item tone-mocking"><strong>mocking · provocative · sarcastic</strong><span>ridiculing, challenging or provoking a response</span></div>
+                    <div class="toolkit-tone-item tone-angry"><strong>challenging · angry · aggressive</strong><span>confrontational, forceful or openly hostile</span></div>
+                  </div>
+                </div>
+                <p class="toolkit-principle"><strong>Do not merely label the tone:</strong> Explain which words, sentence structures or stage directions create it, how another character responds and what this suggests about their relationship.</p>
+              </section>
+              <section class="toolkit-section toolkit-slide" role="tabpanel" id="toolkit-panel-words" aria-labelledby="toolkit-tab-words" data-toolkit-panel="2" hidden>
+                <h4>Word fields and choice of words</h4>
+                <ul>
+                  <li>Notice recurring groups of related words (<strong>semantic fields</strong>).</li>
+                  <li>Examine positive or negative <strong>connotations</strong> and the associations they create.</li>
+                  <li>Consider whether the language is <strong>formal, colloquial, simple, emotionally charged</strong> or noticeably different from the character's usual way of speaking.</li>
+                </ul>
+              </section>
+              <section class="toolkit-section toolkit-slide" role="tabpanel" id="toolkit-panel-devices" aria-labelledby="toolkit-tab-devices" data-toolkit-panel="3" hidden>
+                <h4>Selected stylistic devices</h4>
+                <p>Watch for meaningful <strong>repetition</strong>, <strong>contrasts</strong>, <strong>irony</strong> or <span class="inline-help"><button class="inline-help-trigger" type="button" aria-expanded="false" aria-describedby="tip-figurative">figurative language <span class="help-glyph" aria-hidden="true">ⓘ</span></button><span class="inline-help-popup" role="tooltip" id="tip-figurative">Language that goes beyond literal meaning, often by creating a comparison or image (e.g. metaphor, simile) — <em>bildhafte Sprache</em>.</span></span> where they actually occur. Ask how these choices affect the exchange rather than merely listing devices.</p>
+                <p class="toolkit-closing"><strong>From speech analysis to drama:</strong> Instead of focusing mainly on how a speaker persuades an audience, explain what the dialogue reveals about the characters, their relationship and the developing conflict.</p>
+              </section>
+            </div>
+            <div class="toolkit-footer">
+              <button class="toolkit-pager" type="button" data-toolkit-prev disabled aria-label="Previous language category">← Previous</button>
+              <span class="toolkit-counter" aria-live="polite">1 of 4</span>
+              <button class="toolkit-pager" type="button" data-toolkit-next>Next →</button>
+              <button class="toolkit-close" type="button" data-toolkit-close>Close toolkit <span aria-hidden="true">×</span></button>
+            </div>
           </div>
         </details>
         <div class="analysis-stair" aria-label="Three connected stages of language analysis">
@@ -378,17 +422,22 @@ details summary{color:var(--navy)}
       
     </div></section>
     <section class="step" id="step-3" aria-labelledby="s3-title"><div class="paper">
-      <div class="cp-top"><div class="cp-badge" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><use href="#ico-progress"></use></svg></div><div class="cp-copy"><p class="eyebrow">Step 03 / 04</p><h2 id="s3-title">How does it develop?</h2><p class="sub">Tracing the dynamics of the conversation — and exploring independently</p></div></div>
-      <p class="lead">Dramatic conflicts are rarely static. A conversation may begin with everyday remarks, shift into personal accusations or reach a moment when the tension becomes impossible to ignore. <strong>Trace the progression rather than listing isolated devices.</strong></p>
+      <div class="cp-top"><div class="cp-badge" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><use href="#ico-progress"></use></svg></div><div class="cp-copy"><p class="eyebrow">Step 03 / 04</p><h2 id="s3-title">How does it develop?</h2><p class="sub">Stepping back to examine the development of the whole exchange</p></div></div>
+      <p class="lead">You have examined what the characters say and how they interact. Now <strong>zoom out</strong>: does their interaction change between the beginning and the end, and if so, how? Focus on the <strong>progression of the dialogue</strong> rather than analysing more isolated devices.</p>
       <h3>Map the conversation</h3>
-      <div class="twobox"><div><strong>Earlier in the exchange</strong><p>What is being discussed, and how do the characters respond to one another? <span class="loc">p. 8, ll. 18–35</span></p></div><div><strong>Later in the exchange</strong><p>What has changed in the characters' language, reactions or stage directions? <span class="loc">p. 10, ll. 1–35</span></p></div></div>
-      <div class="task"><span class="task-n">1</span><p>Describe <strong>two or three phases</strong> of the conversation in your own words. At what point does the exchange noticeably change direction or intensity?</p></div>
-      <div class="task"><span class="task-n">2</span><p><strong>Explore on your own:</strong> Find two <em>additional</em> revealing details that you have not yet analysed closely. Choose at least one example involving <strong>interaction or stage directions</strong> and one involving <strong>language or tone</strong>.</p></div>
-      <div class="task"><span class="task-n">3</span><p>Use <strong>Name it → Prove it → Explain it</strong> for both details. How do they contribute to the progression of the conflict?</p></div>
-      <div class="task"><span class="task-n">4</span><p>Does the exchange contain a meaningful <strong>turning point</strong> — a moment after which the interaction takes a different direction? If so, justify your choice. If not, explain how the tension develops more gradually.</p></div>
-      <details><summary><span class="summary-label"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-lightbulb"></use></svg>Need possible places to revisit?</span></summary><div class="hint"><p>You could examine Ruth's longer response near the end, Walter's statements about men and women, or the final stage directions describing Ruth's actions. Choose only what supports your interpretation.</p></div></details>
+      <p>Sketch a simple <strong>three-part map</strong> in GoodNotes, using keywords and brief textual references. You are mapping <em>changes in the interaction</em>, not assigning a numerical tension score.</p>
+      <div class="conversation-map" aria-label="Suggested structure for a three-part map of the dialogue">
+        <div class="conversation-map-stage"><strong>Beginning</strong><p>How do they interact at first?</p></div>
+        <div class="conversation-map-arrow" aria-hidden="true">→</div>
+        <div class="conversation-map-stage"><strong>Development</strong><p>What changes — or remains unchanged?</p></div>
+        <div class="conversation-map-arrow" aria-hidden="true">→</div>
+        <div class="conversation-map-stage"><strong>Ending</strong><p>Where do they stand by the end?</p></div>
+      </div>
+      <div class="task"><span class="task-n">1</span><p><strong>Trace the development:</strong> Compare the interaction at the beginning and the end. What has changed in how Walter and Ruth address or respond to each other? Support your observations with textual evidence.</p></div>
+      <div class="task"><span class="task-n">2</span><p><strong>Identify the shift:</strong> Is there a meaningful <strong>turning point</strong> — a moment after which the conversation changes direction or intensity? Or does the tension develop <strong>gradually</strong>? Justify your interpretation. A single turning point is not required.</p></div>
+      <div class="task"><span class="task-n">3</span><p><strong>Explain its significance:</strong> How does the development of the conversation affect our understanding of the conflict between Walter and Ruth? Refer to the most revealing moment or moments rather than repeating your complete Step 2 analysis.</p></div>
+      <details><summary><span class="summary-label"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-lightbulb"></use></svg>Need possible places to revisit?</span></summary><div class="hint"><p>You could examine Ruth's longer response near the end, Walter's statements about men and women, or the final stage directions describing Ruth's actions. Choose only what supports your interpretation of the dialogue's development.</p></div></details>
       <div class="cue"><p class="lbl"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-lightbulb"></use></svg>Think critically</p><p>Has either character's position changed by the end — or have their conflicting expectations become clearer? Both are possible findings; support your answer with the text.</p></div>
-      
     </div></section>
     <section class="step" id="step-4" aria-labelledby="s4-title"><div class="paper">
       <div class="cp-top"><div class="cp-badge" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><use href="#ico-share"></use></svg></div><div class="cp-copy"><p class="eyebrow">Step 04 / 04 · Prepare at home</p><h2 id="s4-title">Step back &amp; teach</h2><p class="sub">Bring your analysis together — and make your group's insight useful to others</p></div></div>
@@ -431,6 +480,46 @@ tipButtons.forEach(b=>b.addEventListener('click',event=>{
 }));
 document.addEventListener('click',event=>{if(!event.target.closest('.inline-help'))closeTips();});
 document.addEventListener('keydown',event=>{if(event.key==='Escape'){closeTips();}});
+
+/* Switch between four concise support views without leaving the current analysis. */
+const toolkit=document.querySelector('.language-toolkit');
+if(toolkit){
+  const tabs=Array.from(toolkit.querySelectorAll('[data-toolkit-tab]'));
+  const panels=Array.from(toolkit.querySelectorAll('[data-toolkit-panel]'));
+  const prev=toolkit.querySelector('[data-toolkit-prev]');
+  const next=toolkit.querySelector('[data-toolkit-next]');
+  const counter=toolkit.querySelector('.toolkit-counter');
+  const close=toolkit.querySelector('[data-toolkit-close]');
+  let activeToolkit=0;
+  function chooseToolkit(i,moveFocus=false){
+    activeToolkit=Math.max(0,Math.min(tabs.length-1,i));
+    tabs.forEach((tab,j)=>{
+      const isActive=j===activeToolkit;
+      tab.setAttribute('aria-selected',String(isActive));
+      tab.tabIndex=isActive?0:-1;
+      panels[j].hidden=!isActive;
+    });
+    prev.disabled=activeToolkit===0;
+    next.disabled=activeToolkit===tabs.length-1;
+    counter.textContent=(activeToolkit+1)+' of '+tabs.length;
+    if(moveFocus)tabs[activeToolkit].focus();
+    closeTips();
+  }
+  tabs.forEach((tab,j)=>{
+    tab.addEventListener('click',()=>chooseToolkit(j));
+    tab.addEventListener('keydown',e=>{
+      if(e.key==='ArrowRight'||e.key==='ArrowLeft'||e.key==='Home'||e.key==='End'){
+        e.preventDefault();
+        const to=e.key==='Home'?0:e.key==='End'?tabs.length-1:(j+(e.key==='ArrowRight'?1:-1)+tabs.length)%tabs.length;
+        chooseToolkit(to,true);
+      }
+    });
+  });
+  prev.addEventListener('click',()=>chooseToolkit(activeToolkit-1));
+  next.addEventListener('click',()=>chooseToolkit(activeToolkit+1));
+  close.addEventListener('click',()=>{toolkit.open=false;toolkit.querySelector('summary').focus();closeTips();});
+  chooseToolkit(0);
+}
 })();
 </script>
 </body>
