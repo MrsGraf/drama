@@ -370,6 +370,15 @@ details summary{color:var(--navy)}
  .inline-help-popup{width:min(320px,calc(100vw - 24px))}
 }
 @media print{.inline-help-popup{display:none!important}}
+
+/* Desktop header: center act, figure pair and reference; retain tablet and phone layouts. */
+@media(min-width:1200px){
+ .map-identity-inner .identity-scene{text-align:center}
+ .map-identity-inner .identity-scene>.identity-kicker{display:flex;justify-content:center;align-items:center}
+ .map-identity-inner .identity-title-row{display:flex;justify-content:center}
+ .map-identity-inner .identity-copy{text-align:center;max-width:none}
+ .map-identity-inner .identity-chips{justify-content:center}
+}
 </style>
 </head>
 <body>
@@ -548,7 +557,7 @@ details summary{color:var(--navy)}
       <div class="cue"><p class="lbl"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-lightbulb"></use></svg>Think critically</p><p>Has either character's position changed by the end; or have their conflicting expectations become clearer? Both are possible findings; support your answer with the text.</p></div>
     </div></section>
     <section class="step" id="step-4" aria-labelledby="s4-title"><div class="paper">
-      <div class="cp-top"><div class="cp-badge" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><use href="#ico-share"></use></svg></div><div class="cp-copy"><p class="eyebrow">Step 04 / 04 · Prepare at home</p><h2 id="s4-title">Write &amp; Share</h2><p class="sub">Bring your results together; and share what you have learned about analysing dialogue</p></div></div>
+      <div class="cp-top"><div class="cp-badge" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><use href="#ico-share"></use></svg></div><div class="cp-copy"><p class="eyebrow">Step 04 / 04</p><h2 id="s4-title">Write &amp; Share</h2><p class="sub">Bring your results together; and share what you have learned about analysing dialogue</p></div></div>
       <p class="lead">You have explored the conflict, its presentation and its development. Now turn your findings into a <strong>coherent written analysis</strong>, then consider which analytical insight another group could use.</p>
 
       <h3>Part A · Write an analysis</h3>
