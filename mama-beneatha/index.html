@@ -391,6 +391,17 @@ details summary{color:var(--navy)}
  .map-identity-inner .identity-copy{text-align:center;max-width:none}
  .map-identity-inner .identity-chips{justify-content:center}
 }
+
+/* Scene-header spacing: clearer visual rhythm without enlarging the Act-to-title gap. */
+@media(max-width:600px){
+  .map-identity-inner .identity-chips{margin-top:12px}
+  .map-identity-inner .identity-title-row{row-gap:14px;gap:14px}
+  .map-identity-inner .identity-title-row>.script-reminder{margin-top:0}
+  .map-identity-inner .identity-nav{margin-top:6px}
+}
+@media(min-width:1200px){
+  .map-identity-inner .identity-chips{margin-top:13px}
+}
 </style>
 </head>
 <body>
