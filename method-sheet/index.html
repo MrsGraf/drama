@@ -548,6 +548,33 @@ details summary{color:var(--navy)}
 #step-2 .phase-framework-note .lbl{color:#9e3431;font-weight:850}
 #step-2 .phase-framework-note p:not(.lbl){margin:10px 0 0;line-height:1.55}
 #step-2 .phase-framework-note p:last-child{margin-bottom:0}
+
+/* Method-sheet navigation: text comprehension in Steps 1–2, presentation in Step 3.
+   The same labels are rendered in both the iPad navigation and desktop sidebar. */
+.step-nav button .nav-copy{
+  display:flex;flex-direction:column;justify-content:center;align-items:center;
+  gap:2px;min-width:0;max-width:100%;line-height:1.25;text-align:center;
+}
+.step-nav button .nav-title{display:block;font-weight:760;color:inherit;font-size:inherit;line-height:1.18}
+.step-nav button .nav-sub{
+  display:block;color:#798693;font-weight:500;
+  font-size:clamp(.56rem,.68vw,.66rem);letter-spacing:.012em;line-height:1.15;
+  max-width:100%;overflow-wrap:normal;hyphens:none;
+}
+.step-nav button.active .nav-sub{color:#526a7a}
+@media(min-width:1200px){
+ .desktop-side .step-nav button .nav-copy{align-items:flex-start;text-align:left}
+ .desktop-side .step-nav button .nav-sub{font-size:.7rem}
+}
+@media(max-width:1199px){
+ .identity-nav .step-nav button{min-height:65px;padding-top:7px;padding-bottom:7px}
+ .identity-nav .step-nav button .nav-sub{font-size:clamp(.54rem,.9vw,.65rem)}
+}
+@media(max-width:600px){
+ .identity-nav .step-nav button{min-height:66px;gap:3px}
+ .identity-nav .step-nav button .nav-copy{gap:3px}
+ .identity-nav .step-nav button .nav-sub{font-size:.54rem;line-height:1.13;letter-spacing:0}
+}
 </style>
 </head>
 <body>
@@ -574,14 +601,14 @@ details summary{color:var(--navy)}
       </div>
     </div>
   </div>
-  <div class="identity-nav"><nav class="step-nav" aria-label="Method sheet steps"><button type="button" data-jump="0" class="active"><span class="num"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-dialogue"></use></svg><span class="sr-only">Step 1</span></span><span>Situation</span></button><button type="button" data-jump="1" class=""><span class="num"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-progress"></use></svg><span class="sr-only">Step 2</span></span><span>Progression</span></button><button type="button" data-jump="2" class=""><span class="num"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-search"></use></svg><span class="sr-only">Step 3</span></span><span>Techniques</span></button><button type="button" data-jump="3" class=""><span class="num"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-pen"></use></svg><span class="sr-only">Step 4</span></span><span>Writing</span></button></nav></div>
+  <div class="identity-nav"><nav class="step-nav" aria-label="Method sheet steps"><button type="button" data-jump="0" class="active"><span class="num"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-dialogue"></use></svg><span class="sr-only">Step 1</span></span><span class="nav-copy"><span class="nav-title">Situation</span><span class="nav-sub">Content</span></span></button><button type="button" data-jump="1" class=""><span class="num"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-progress"></use></svg><span class="sr-only">Step 2</span></span><span class="nav-copy"><span class="nav-title">Progression</span><span class="nav-sub">Content</span></span></button><button type="button" data-jump="2" class=""><span class="num"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-search"></use></svg><span class="sr-only">Step 3</span></span><span class="nav-copy"><span class="nav-title">Techniques</span><span class="nav-sub">Presentation</span></span></button><button type="button" data-jump="3" class=""><span class="num"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-pen"></use></svg><span class="sr-only">Step 4</span></span><span class="nav-copy"><span class="nav-title">Writing</span><span class="nav-sub">Written analysis</span></span></button></nav></div>
 </div></section>
 <div class="wrap main">
 <aside class="side desktop-side" aria-label="Method sheet navigation"><div class="side-card">
-<p class="side-title">Your analysis route</p><nav class="step-nav" aria-label="Desktop method sheet steps"><button type="button" data-jump="0" class="active"><span class="num"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-dialogue"></use></svg><span class="sr-only">Step 1</span></span><span>Situation</span></button><button type="button" data-jump="1" class=""><span class="num"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-progress"></use></svg><span class="sr-only">Step 2</span></span><span>Progression</span></button><button type="button" data-jump="2" class=""><span class="num"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-search"></use></svg><span class="sr-only">Step 3</span></span><span>Techniques</span></button><button type="button" data-jump="3" class=""><span class="num"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-pen"></use></svg><span class="sr-only">Step 4</span></span><span>Writing</span></button></nav>
+<p class="side-title">Your analysis route</p><nav class="step-nav" aria-label="Desktop method sheet steps"><button type="button" data-jump="0" class="active"><span class="num"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-dialogue"></use></svg><span class="sr-only">Step 1</span></span><span class="nav-copy"><span class="nav-title">Situation</span><span class="nav-sub">Content</span></span></button><button type="button" data-jump="1" class=""><span class="num"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-progress"></use></svg><span class="sr-only">Step 2</span></span><span class="nav-copy"><span class="nav-title">Progression</span><span class="nav-sub">Content</span></span></button><button type="button" data-jump="2" class=""><span class="num"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-search"></use></svg><span class="sr-only">Step 3</span></span><span class="nav-copy"><span class="nav-title">Techniques</span><span class="nav-sub">Presentation</span></span></button><button type="button" data-jump="3" class=""><span class="num"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-pen"></use></svg><span class="sr-only">Step 4</span></span><span class="nav-copy"><span class="nav-title">Writing</span><span class="nav-sub">Written analysis</span></span></button></nav>
 </div></aside>
 <main class="content" id="analysis-main">
-<section class="step active" id="step-1" aria-labelledby="s1-title"><div class="paper"><div class="cp-top"><div class="cp-badge" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-dialogue"></use></svg></div><div class="cp-copy"><p class="eyebrow">Step 01 / 04</p><h2 id="s1-title">Understanding the Dramatic Situation</h2><p class="sub">Who is involved, what matters to them, and why?</p></div></div>
+<section class="step active" id="step-1" aria-labelledby="s1-title"><div class="paper"><div class="cp-top"><div class="cp-badge" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-dialogue"></use></svg></div><div class="cp-copy"><p class="eyebrow">Step 01 / 04</p><h2 id="s1-title">Understanding the Situation</h2><p class="sub">Who is involved, what matters to them, and why?</p></div></div>
 <p class="lead"><strong>A convincing drama analysis begins with a clear understanding of the dramatic situation.</strong> First, make sure you understand what happens in the excerpt, how the characters relate to one another, and what their intentions and perspectives are. This provides the foundation for analysing how interaction, stage directions and use of language create meaning.</p>
 <div class="cue cue-stair">
 <p class="lbl"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-book"></use></svg>Understand before you analyse</p>
@@ -613,7 +640,7 @@ details summary{color:var(--navy)}
 
 
 </div></section>
-<section class="step " id="step-2" aria-labelledby="s2-title"><div class="paper"><div class="cp-top"><div class="cp-badge" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-progress"></use></svg></div><div class="cp-copy"><p class="eyebrow">Step 02 / 04</p><h2 id="s2-title">Tracing the Interaction</h2><p class="sub">How does the exchange unfold, and what changes?</p></div></div>
+<section class="step " id="step-2" aria-labelledby="s2-title"><div class="paper"><div class="cp-top"><div class="cp-badge" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-progress"></use></svg></div><div class="cp-copy"><p class="eyebrow">Step 02 / 04</p><h2 id="s2-title">Tracing the Progression</h2><p class="sub">How does the exchange unfold, and what changes?</p></div></div>
 <p class="lead">Dramatic dialogues may unfold in very different ways. The following <strong>four possible phases</strong> can help you trace how an exchange progresses from its starting situation towards an outcome.</p>
 <h3>A Possible Framework</h3>
 <div class="phase-flow" aria-label="Four connected phases of a dramatic interaction"><div class="phase-flow-row"><div class="phase-flow-name">Opening</div><div class="phase-flow-description">What prompts the exchange? What do the characters want, and <strong>what is at stake</strong>? Consider why this interaction takes place at this point in the play.</div><svg class="phase-connector" viewBox="0 0 36 39" fill="none" stroke="#a82e35" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18.5 1.5 C18.8 7 17 15 18.2 27"/><path d="M8.8 20.2 C12.7 24.8 16 28.4 18.3 34.7 C21.3 28.8 25.1 25 28.3 21.4"/></svg></div>
