@@ -430,6 +430,23 @@ details summary{color:var(--navy)}
 .locwrap a.loc{text-decoration:none}
 .locwrap a.loc:hover{text-decoration:underline;background:#e2ebf2}
 @media print{.step{display:block!important;animation:none!important;margin-bottom:18px;break-after:auto}.side,.identity-nav,.script-reminder{display:none!important}.main{display:block}.paper{box-shadow:none;border:1px solid #d7dde2}.map-identity{position:static!important}.footer{display:none}.language-toolkit{break-inside:avoid}}
+
+/* Method sheet, Step 1 – the core methodological insight is deliberately prominent. */
+#step-1 .cue.conflict-highlight {
+  border:2px solid #b12e33;
+  border-left-width:5px;
+  background:#fffaf8;
+  box-shadow:0 3px 11px rgba(146,43,47,.08);
+}
+#step-1 .cue.conflict-highlight .lbl {color:#a42c34;font-weight:850;}
+/* One accessible definition rather than a tooltip nested inside another tooltip. */
+#step-1 .stair-label .info-help {display:inline-flex;align-items:center;margin-left:2px;flex:none;}
+#step-1 .stair-label .info-trigger {
+  border:0;display:inline-grid;place-items:center;min-width:25px;min-height:25px;
+  padding:0;background:transparent;color:#a42c34;font-style:normal;
+  font-weight:750;font-size:17px;line-height:1;text-decoration:none;
+}
+#step-1 .stair-label .info-trigger:focus-visible {outline:2px solid var(--navy);outline-offset:2px;}
 </style>
 </head>
 <body>
@@ -472,11 +489,11 @@ details summary{color:var(--navy)}
 <div class="stair-arrow" aria-hidden="true">↓</div>
 <div class="stair-card indent-1"><div class="stair-label"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-search"></use></svg>Perspectives &amp; relationships</div><p>What does each character want, fear, assume or expect? How close or distant are they? Are power, status or dependency relevant?</p></div>
 <div class="stair-arrow" aria-hidden="true">↓</div>
-<div class="stair-card indent-2"><div class="stair-label"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-lightbulb"></use></svg>Tension &amp; subtext</div><p>Do statements reveal a disagreement, conflicting expectations or unspoken feelings? What might a character mean without saying it directly?</p></div>
+<div class="stair-card indent-2"><div class="stair-label"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-lightbulb"></use></svg>Tension &amp; subtext <span class="inline-help info-help"><button class="inline-help-trigger info-trigger" type="button" aria-label="What is subtext?" aria-expanded="false" aria-describedby="tip-subtext">ⓘ</button><span class="inline-help-popup" id="tip-subtext" role="tooltip"><strong>What is subtext?</strong> Meaning that remains implicit: a character may say one thing while wanting, fearing or implying something else. Look for avoidance of direct answers, pauses, contradictions, gestures and patterns of response. Support your interpretation with evidence from the text.</span></span></div><p>Do statements reveal a disagreement, conflicting expectations or unspoken feelings? What might a character mean without saying it directly?</p></div>
 </div></div>
-<div class="cue warm"><p class="lbl"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-lightbulb"></use></svg>Conflict is not always an argument</p><p>A dramatic dialogue does <strong>not</strong> need an open quarrel. Dramatic tension may lie in conflicting values, unequal power, hesitation, unspoken expectations or a gap between words and behaviour. An interaction can also develop through affection, persuasion, mutual understanding or a change of perspective.</p></div>
+<div class="cue warm conflict-highlight"><p class="lbl"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-lightbulb"></use></svg>Conflict is not always an argument</p><p>A dramatic dialogue does <strong>not</strong> need an open quarrel. Dramatic tension may lie in conflicting values, unequal power, hesitation, unspoken expectations or a gap between words and behaviour. An interaction can also develop through affection, persuasion, mutual understanding or a change of perspective.</p></div>
 <h3>From understanding to interpretation</h3><p>Form a provisional idea about <strong>what the interaction reveals</strong> — not just what the characters discuss. Check that your interpretation is supported by the original text.</p>
-<details><summary><span class="summary-label"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-lightbulb"></use></svg>What is subtext?</span></summary><div class="hint"><p><strong>Subtext</strong> is meaning that remains implicit: a character may say one thing while wanting, fearing or implying something else. Look for evasions, pauses, contradictions, gestures and patterns of response. Avoid interpretations that cannot be supported.</p></div></details>
+
 </div></section>
 <section class="step " id="step-2" aria-labelledby="s2-title"><div class="paper"><div class="cp-top"><div class="cp-badge" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-progress"></use></svg></div><div class="cp-copy"><p class="eyebrow">Step 02 / 04</p><h2 id="s2-title">Dramatic Development &amp; Structure</h2><p class="sub">How does the interaction unfold and change?</p></div></div>
 <p class="lead">Trace the <strong>movement of the interaction</strong>: how contributions, reactions, actions and shifts in tone lead from the opening situation towards an outcome.</p>
