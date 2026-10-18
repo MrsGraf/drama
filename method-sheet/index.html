@@ -431,22 +431,26 @@ details summary{color:var(--navy)}
 .locwrap a.loc:hover{text-decoration:underline;background:#e2ebf2}
 @media print{.step{display:block!important;animation:none!important;margin-bottom:18px;break-after:auto}.side,.identity-nav,.script-reminder{display:none!important}.main{display:block}.paper{box-shadow:none;border:1px solid #d7dde2}.map-identity{position:static!important}.footer{display:none}.language-toolkit{break-inside:avoid}}
 
-/* Method sheet, Step 1 – the core methodological insight is deliberately prominent. */
-#step-1 .cue.conflict-highlight {
-  border:2px solid #b12e33;
-  border-left-width:5px;
-  background:#fffaf8;
-  box-shadow:0 3px 11px rgba(146,43,47,.08);
+/* Step 1: the two concepts share a single white card, at every screen width. */
+#step-1 .insight-switch {margin-top:14px}
+#step-1 .insight-tabs {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-bottom:10px}
+#step-1 .insight-tabs button {
+  border:1px solid #ccd8e2;border-radius:5px;background:#f1f5f8;color:var(--navy);
+  min-height:42px;padding:7px 12px;font:750 .92rem/1.3 system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
+  cursor:pointer;transition:background .16s,border-color .16s,box-shadow .16s;
 }
-#step-1 .cue.conflict-highlight .lbl {color:#a42c34;font-weight:850;}
-/* One accessible definition rather than a tooltip nested inside another tooltip. */
-#step-1 .stair-label .info-help {display:inline-flex;align-items:center;margin-left:2px;flex:none;}
-#step-1 .stair-label .info-trigger {
-  border:0;display:inline-grid;place-items:center;min-width:25px;min-height:25px;
-  padding:0;background:transparent;color:#a42c34;font-style:normal;
-  font-weight:750;font-size:17px;line-height:1;text-decoration:none;
+#step-1 .insight-tabs button:hover {background:#e8eff4;border-color:#9db3c2}
+#step-1 .insight-tabs button[aria-selected="true"] {
+  background:#fff2ef;border-color:#b12e33;color:#92272e;
+  box-shadow:inset 0 -3px 0 #b12e33;
 }
-#step-1 .stair-label .info-trigger:focus-visible {outline:2px solid var(--navy);outline-offset:2px;}
+#step-1 .insight-tabs button:focus-visible {outline:3px solid #24466a;outline-offset:2px}
+#step-1 .insight-panel {border:1px solid #d4dfe7;border-left:4px solid #607f99;border-radius:5px;background:#f8fbfd;padding:14px 16px}
+#step-1 .insight-panel[hidden] {display:none!important}
+#step-1 .insight-panel strong:first-child {display:block;color:var(--navy);font-size:.91rem;margin-bottom:7px}
+#step-1 .insight-panel p {line-height:1.55}
+#step-1 .tension-panel {border:2px solid #b12e33;border-left-width:5px;background:#fffaf8;box-shadow:0 2px 9px rgba(146,43,47,.06)}
+#step-1 .tension-panel strong:first-child {color:#92272e}
 </style>
 </head>
 <body>
@@ -489,10 +493,26 @@ details summary{color:var(--navy)}
 <div class="stair-arrow" aria-hidden="true">↓</div>
 <div class="stair-card indent-1"><div class="stair-label"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-search"></use></svg>Perspectives &amp; relationships</div><p>What does each character want, fear, assume or expect? How close or distant are they? Are power, status or dependency relevant?</p></div>
 <div class="stair-arrow" aria-hidden="true">↓</div>
-<div class="stair-card indent-2"><div class="stair-label"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-lightbulb"></use></svg>Tension &amp; subtext <span class="inline-help info-help"><button class="inline-help-trigger info-trigger" type="button" aria-label="What is subtext?" aria-expanded="false" aria-describedby="tip-subtext">ⓘ</button><span class="inline-help-popup" id="tip-subtext" role="tooltip"><strong>What is subtext?</strong> Meaning that remains implicit: a character may say one thing while wanting, fearing or implying something else. Look for avoidance of direct answers, pauses, contradictions, gestures and patterns of response. Support your interpretation with evidence from the text.</span></span></div><p>Do statements reveal a disagreement, conflicting expectations or unspoken feelings? What might a character mean without saying it directly?</p></div>
+<div class="stair-card indent-2">
+  <div class="stair-label"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-lightbulb"></use></svg>Tension &amp; subtext</div>
+  <p>What do the characters express openly — and what might remain beneath the surface?</p>
+  <div class="insight-switch" aria-label="Explore tension and subtext">
+    <div class="insight-tabs" role="tablist" aria-label="Tension and subtext">
+      <button type="button" role="tab" id="insight-tab-tension" aria-controls="insight-panel-tension" aria-selected="true" tabindex="0" data-insight-tab="0">Tension</button>
+      <button type="button" role="tab" id="insight-tab-subtext" aria-controls="insight-panel-subtext" aria-selected="false" tabindex="-1" data-insight-tab="1">Subtext</button>
+    </div>
+    <div class="insight-panel tension-panel" role="tabpanel" id="insight-panel-tension" aria-labelledby="insight-tab-tension" data-insight-panel="0">
+      <strong>Conflict is not always an argument</strong>
+      <p>A dramatic dialogue does <strong>not</strong> need an open quarrel. Dramatic tension may lie in conflicting values, unequal power, hesitation, unspoken expectations or a gap between words and behaviour. An interaction can also develop through affection, persuasion, mutual understanding or a change of perspective.</p>
+    </div>
+    <div class="insight-panel subtext-panel" role="tabpanel" id="insight-panel-subtext" aria-labelledby="insight-tab-subtext" data-insight-panel="1" hidden>
+      <strong>What is subtext?</strong>
+      <p>Subtext is meaning that remains implicit: a character may say one thing while wanting, fearing or implying something else. Look for avoidance of direct answers, pauses, contradictions, gestures and patterns of response. Support your interpretation with evidence from the text.</p>
+    </div>
+  </div>
+</div>
 </div></div>
-<div class="cue warm conflict-highlight"><p class="lbl"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-lightbulb"></use></svg>Conflict is not always an argument</p><p>A dramatic dialogue does <strong>not</strong> need an open quarrel. Dramatic tension may lie in conflicting values, unequal power, hesitation, unspoken expectations or a gap between words and behaviour. An interaction can also develop through affection, persuasion, mutual understanding or a change of perspective.</p></div>
-<h3>From understanding to interpretation</h3><p>Form a provisional idea about <strong>what the interaction reveals</strong> — not just what the characters discuss. Check that your interpretation is supported by the original text.</p>
+
 
 </div></section>
 <section class="step " id="step-2" aria-labelledby="s2-title"><div class="paper"><div class="cp-top"><div class="cp-badge" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-progress"></use></svg></div><div class="cp-copy"><p class="eyebrow">Step 02 / 04</p><h2 id="s2-title">Dramatic Development &amp; Structure</h2><p class="sub">How does the interaction unfold and change?</p></div></div>
@@ -684,6 +704,34 @@ if(toolkit){
     });
   });
   chooseToolkit(0);
+}
+
+/* Step 1 concept switch: shared content for mouse, touch and keyboard. */
+const insight=document.querySelector('#step-1 .insight-switch');
+if(insight){
+  const tabs=Array.from(insight.querySelectorAll('[data-insight-tab]'));
+  const panels=Array.from(insight.querySelectorAll('[data-insight-panel]'));
+  function selectInsight(i,moveFocus=false){
+    const active=Math.max(0,Math.min(i,tabs.length-1));
+    tabs.forEach((tab,j)=>{
+      const selected=j===active;
+      tab.setAttribute('aria-selected',String(selected));
+      tab.tabIndex=selected?0:-1;
+      panels[j].hidden=!selected;
+    });
+    if(moveFocus)tabs[active].focus();
+  }
+  tabs.forEach((tab,j)=>{
+    tab.addEventListener('click',()=>selectInsight(j));
+    tab.addEventListener('keydown',e=>{
+      if(['ArrowLeft','ArrowRight','Home','End'].includes(e.key)){
+        e.preventDefault();
+        const next=e.key==='Home'?0:e.key==='End'?tabs.length-1:(j+(e.key==='ArrowRight'?1:-1)+tabs.length)%tabs.length;
+        selectInsight(next,true);
+      }
+    });
+  });
+  selectInsight(0);
 }
 })();
 
