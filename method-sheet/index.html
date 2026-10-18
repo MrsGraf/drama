@@ -486,7 +486,7 @@ details summary{color:var(--navy)}
   min-height:95px;
   align-items:stretch;
 }
-#step-2 .phase-flow-row:not(:last-child){margin-bottom:30px}
+#step-2 .phase-flow > .stair-arrow{height:30px;margin:0;line-height:1}
 #step-2 .phase-flow-name {
   display:flex;
   justify-content:center;
@@ -512,17 +512,6 @@ details summary{color:var(--navy)}
   hyphens:none;
 }
 #step-2 .phase-flow-description strong{font-weight:800;color:#172c45}
-#step-2 .phase-connector{
-  position:absolute;
-  pointer-events:none;
-  z-index:2;
-  left:calc(var(--phase-label-width) / 2);
-  bottom:-31px;
-  width:29px;
-  height:38px;
-  transform:translateX(-50%);
-  filter:drop-shadow(0 1px 0 rgba(167,40,47,.17));
-}
 @media(max-width:760px){
   #step-2 .phase-flow{--phase-label-width:clamp(125px,28%,170px)}
   #step-2 .phase-flow-name{font-size:.88rem}
@@ -540,7 +529,6 @@ details summary{color:var(--navy)}
     font-size:.94rem;
   }
   #step-2 .phase-flow-description{padding:11px 12px;font-size:.9rem;line-height:1.5}
-  #step-2 .phase-connector{left:50%;bottom:-31px}
 }
 
 /* Step 2: analytical and creative uses of a flexible framework. */
@@ -679,11 +667,13 @@ details summary{color:var(--navy)}
 
 </div></section>
 <section class="step " id="step-2" aria-labelledby="s2-title"><div class="paper"><div class="cp-top"><div class="cp-badge" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-progress"></use></svg></div><div class="cp-copy"><p class="eyebrow">Step 02 / 04</p><h2 id="s2-title">Tracing the Progression</h2><p class="sub">How is the exchange structured, and what changes along the way?</p></div></div>
-<p class="lead">Dramatic dialogues may unfold in very different ways. Examining their <strong>structure and progression</strong> helps you recognise significant changes. The following four possible phases offer a starting point.</p>
-<h3>A Possible Framework</h3>
-<div class="phase-flow" aria-label="Four connected phases of a dramatic interaction"><div class="phase-flow-row"><div class="phase-flow-name">Opening</div><div class="phase-flow-description">How does the exchange begin? How do the characters initially approach one another, and what tone or expectations are established?</div><svg class="phase-connector" viewBox="0 0 36 39" fill="none" stroke="#a82e35" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18.5 1.5 C18.8 7 17 15 18.2 27"/><path d="M8.8 20.2 C12.7 24.8 16 28.4 18.3 34.7 C21.3 28.8 25.1 25 28.3 21.4"/></svg></div>
-<div class="phase-flow-row"><div class="phase-flow-name">Development</div><div class="phase-flow-description">As the characters respond to one another, they may <strong>agree, disagree, question, persuade, connect or withdraw.</strong> Their attitudes, relationship or the atmosphere may change.</div><svg class="phase-connector" viewBox="0 0 36 39" fill="none" stroke="#a82e35" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18.5 1.5 C18.8 7 17 15 18.2 27"/><path d="M8.8 20.2 C12.7 24.8 16 28.4 18.3 34.7 C21.3 28.8 25.1 25 28.3 21.4"/></svg></div>
-<div class="phase-flow-row"><div class="phase-flow-name">Critical Moment</div><div class="phase-flow-description">A significant statement, reaction or action may mark a <strong>turning point</strong> (a change in direction) or a <strong>climax</strong> (a peak of tension or emotion). Such a moment can also be subtle, for example a new realisation or a shift in understanding.</div><svg class="phase-connector" viewBox="0 0 36 39" fill="none" stroke="#a82e35" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18.5 1.5 C18.8 7 17 15 18.2 27"/><path d="M8.8 20.2 C12.7 24.8 16 28.4 18.3 34.7 C21.3 28.8 25.1 25 28.3 21.4"/></svg></div>
+<p class="lead">Dramatic dialogues may unfold in very different ways. Examining their <strong>structure and progression</strong> helps you recognise significant changes. The following framework can help you trace how a dramatic interaction progresses from its starting situation towards an outcome.</p>
+<div class="phase-flow" aria-label="A possible framework for tracing dramatic interaction"><div class="phase-flow-row"><div class="phase-flow-name">Opening</div><div class="phase-flow-description">How does the exchange begin? How do the characters initially approach one another, and what tone or expectations are established?</div></div>
+<div class="stair-arrow" aria-hidden="true">↓</div>
+<div class="phase-flow-row"><div class="phase-flow-name">Development</div><div class="phase-flow-description">As the characters respond to one another, they may <strong>agree, disagree, question, persuade, connect or withdraw.</strong> Their attitudes, relationship or the atmosphere may change.</div></div>
+<div class="stair-arrow" aria-hidden="true">↓</div>
+<div class="phase-flow-row"><div class="phase-flow-name">Critical Moment</div><div class="phase-flow-description">A significant statement, reaction or action may mark a <strong>turning point</strong> (a change in direction) or a <strong>climax</strong> (a peak of tension or emotion). Such a moment can also be subtle, for example a new realisation or a shift in understanding.</div></div>
+<div class="stair-arrow" aria-hidden="true">↓</div>
 <div class="phase-flow-row"><div class="phase-flow-name">Outcome</div><div class="phase-flow-description">The exchange ends with the relationship, attitudes or situation <strong>changed, reaffirmed or left open.</strong> Even an unresolved interaction can influence what happens next.</div></div></div>
 <div class="cue warm phase-framework-note"><p class="lbl"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-lightbulb"></use></svg>A useful framework, not a fixed formula!</p>
 <p><strong>When analysing dramatic dialogue:</strong> Use the framework to explore how the playwright shapes the interaction, but do not force a scene into a predetermined structure. Not every dialogue has a distinct turning point or climax; some have several meaningful shifts, while others unfold quietly or end without a resolution.</p>
