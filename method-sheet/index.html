@@ -451,6 +451,46 @@ details summary{color:var(--navy)}
 #step-1 .insight-panel p {line-height:1.55}
 #step-1 .tension-panel {border:2px solid #b12e33;border-left-width:5px;background:#fffaf8;box-shadow:0 2px 9px rgba(146,43,47,.06)}
 #step-1 .tension-panel strong:first-child {color:#92272e}
+
+/* Method Sheet / Step 2 – four connected phases, matching the original worksheet.
+   Same wording/content at all widths; layout adapts, not the information. */
+#step-2 .phase-flow{
+  background:#eef3f6;border:1px solid #d9e2e8;border-radius:4px;
+  padding:clamp(12px,2.5vw,22px);margin:16px 0 23px;
+  --phase-label-col:23%;
+}
+#step-2 .phase-flow-row{
+  position:relative;display:grid;grid-template-columns:minmax(0,var(--phase-label-col)) minmax(0,1fr);
+  align-items:stretch;background:#fff;border:2px solid #d9e1e6;
+  min-height:98px;
+}
+#step-2 .phase-flow-row:not(:last-child){margin-bottom:27px}
+#step-2 .phase-flow-name{
+  display:flex;align-items:center;justify-content:center;text-align:center;
+  color:#143960;font-size:clamp(.99rem,1.5vw,1.28rem);line-height:1.16;font-weight:850;
+  padding:13px 9px;border-right:2px solid #d8e2e8;
+}
+#step-2 .phase-flow-description{
+  padding:14px clamp(13px,2vw,23px);font-size:.94rem;line-height:1.55;
+  display:flex;flex-direction:column;justify-content:center;
+}
+#step-2 .phase-flow-description strong{color:#182c45;font-weight:800}
+#step-2 .phase-connector{
+  position:absolute;z-index:2;pointer-events:none;
+  left:calc(var(--phase-label-col) / 2);bottom:-28px;
+  width:32px;height:37px;transform:translateX(-50%);
+  filter:drop-shadow(.3px .4px 0 rgba(167,40,47,.28));
+}
+@media(max-width:620px){
+  #step-2 .phase-flow{padding:12px}
+  #step-2 .phase-flow-row{grid-template-columns:1fr}
+  #step-2 .phase-flow-name{
+    justify-content:flex-start;text-align:left;border-right:0;border-bottom:2px solid #d8e2e8;
+    padding:9px 14px;font-size:1rem;
+  }
+  #step-2 .phase-flow-description{padding:12px 14px;font-size:.91rem}
+  #step-2 .phase-connector{left:50%;width:28px;height:34px}
+}
 </style>
 </head>
 <body>
@@ -518,7 +558,10 @@ details summary{color:var(--navy)}
 <section class="step " id="step-2" aria-labelledby="s2-title"><div class="paper"><div class="cp-top"><div class="cp-badge" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-progress"></use></svg></div><div class="cp-copy"><p class="eyebrow">Step 02 / 04</p><h2 id="s2-title">Dramatic Development &amp; Structure</h2><p class="sub">How does the interaction unfold and change?</p></div></div>
 <p class="lead">Trace the <strong>movement of the interaction</strong>: how contributions, reactions, actions and shifts in tone lead from the opening situation towards an outcome.</p>
 <h3>A flexible four-phase model</h3>
-<div class="writing-scaffold" aria-label="Flexible model for dramatic development"><p class="lbl"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-progress"></use></svg>Opening → Development → Critical Moment → Outcome</p><div class="writing-scaffold-grid"><div class="writing-phrase"><strong>1 · Opening</strong><p>What is the starting situation? What do the characters want or expect?</p></div><div class="writing-phrase"><strong>2 · Development</strong><p>How do their contributions and reactions change the tone, tension or relationship?</p></div><div class="writing-phrase"><strong>3 · Critical Moment</strong><p>Does a statement, response, realisation or action significantly change the interaction?</p></div><div class="writing-phrase"><strong>4 · Outcome</strong><p>What is different by the end — and what remains unresolved?</p></div></div></div>
+<div class="phase-flow" aria-label="Four connected phases of a dramatic interaction"><div class="phase-flow-row"><div class="phase-flow-name">Opening</div><div class="phase-flow-description">The interaction begins in a particular situation. The characters’ intentions, relationships and potentially conflicting expectations establish <strong>what is at stake.</strong></div><svg class="phase-connector" viewBox="0 0 36 39" fill="none" stroke="#a82e35" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18.5 1.5 C18.8 7 17 15 18.2 27"/><path d="M8.8 20.2 C12.7 24.8 16 28.4 18.3 34.7 C21.3 28.8 25.1 25 28.3 21.4"/></svg></div>
+<div class="phase-flow-row"><div class="phase-flow-name">Development</div><div class="phase-flow-description">The interaction develops through statements, responses and actions. <strong>Agreement, disagreement, misunderstandings or changing attitudes</strong> influence its direction and may increase the tension.</div><svg class="phase-connector" viewBox="0 0 36 39" fill="none" stroke="#a82e35" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18.5 1.5 C18.8 7 17 15 18.2 27"/><path d="M8.8 20.2 C12.7 24.8 16 28.4 18.3 34.7 C21.3 28.8 25.1 25 28.3 21.4"/></svg></div>
+<div class="phase-flow-row"><div class="phase-flow-name">Critical Moment</div><div class="phase-flow-description">A significant statement, reaction or action may mark a <strong>climax or turning point</strong>, intensifying the tension, revealing something important or changing the direction of the interaction.</div><svg class="phase-connector" viewBox="0 0 36 39" fill="none" stroke="#a82e35" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18.5 1.5 C18.8 7 17 15 18.2 27"/><path d="M8.8 20.2 C12.7 24.8 16 28.4 18.3 34.7 C21.3 28.8 25.1 25 28.3 21.4"/></svg></div>
+<div class="phase-flow-row"><div class="phase-flow-name">Outcome</div><div class="phase-flow-description">The interaction comes to an end, leaving the characters’ relationship or situation <strong>changed, reaffirmed or unresolved.</strong> The ending may also <strong>create expectations</strong> for what happens next.</div></div></div>
 <div class="cue warm"><p class="lbl"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-lightbulb"></use></svg>Do not force a scene into four boxes</p><p>The model is a <strong>tool for noticing development</strong>, not a compulsory structure. A dialogue may have several meaningful shifts, an understated critical moment or no clear resolution. A turning point need not be an escalation.</p></div>
 <h3>What changes?</h3>
 <div class="cue"><p class="lbl"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-search"></use></svg>Trace significant shifts</p><p>Pay attention to changes in <strong>tone, emotional distance, initiative, control, expectations, confidence and understanding</strong>. Find the passage where a shift becomes visible and ask what produces it.</p></div>
