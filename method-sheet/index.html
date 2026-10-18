@@ -452,12 +452,12 @@ details summary{color:var(--navy)}
 #step-1 .insight-tabs button:focus-visible{outline:3px solid #24466a;outline-offset:2px}
 #step-1 .insight-panel{border:2px solid #d2dfd5;border-left-width:5px;border-radius:5px;padding:14px 16px}
 #step-1 .insight-panel[hidden]{display:none!important}
-#step-1 .insight-panel strong:first-child{display:block;font-size:.91rem;margin-bottom:7px}
+#step-1 .insight-panel > strong:first-child{display:block;font-size:.91rem;margin-bottom:7px}
 #step-1 .insight-panel p{line-height:1.55}
 #step-1 .tension-panel{border-color:#28604a;background:#f0f8f3;box-shadow:0 2px 9px rgba(40,96,74,.06)}
-#step-1 .tension-panel strong:first-child{color:#245742}
+#step-1 .tension-panel > strong:first-child{color:#245742}
 #step-1 .subtext-panel{border-color:#729777;background:#f6faf4;box-shadow:0 2px 9px rgba(92,132,97,.05)}
-#step-1 .subtext-panel strong:first-child{color:#426b4b}
+#step-1 .subtext-panel > strong:first-child{color:#426b4b}
 
 /* Maintain readable line wrapping and intentional paragraph spacing in Step 1. */
 #step-1 .stair-card .insight-panel{min-width:0;max-width:100%;box-sizing:border-box;text-align:left}
@@ -576,34 +576,34 @@ details summary{color:var(--navy)}
  .identity-nav .step-nav button .nav-sub{font-size:.54rem;line-height:1.13;letter-spacing:0}
 }
 
-/* Opening: optional dramaturgical context within the first framework row. */
-#step-2 .phase-opening-questions{margin:0!important;line-height:1.52}
-#step-2 .phase-opening-info{
-  margin-top:10px;background:#f7fafc;border:1px solid #d9e4e9;
+/* Step 1: collapsed dramaturgical context belongs to the situation,
+   not to the first phase of an interaction. */
+#step-1 .situation-context-info{
+  margin-top:11px;background:#f7fafc;border:1px solid #d9e4e9;
   border-radius:4px;overflow:hidden;
 }
-#step-2 .phase-opening-info summary{
-  color:#2b5670;cursor:pointer;font-weight:700;font-size:.88em;
-  padding:9px 11px;min-height:38px;line-height:1.35;gap:7px;
-  display:flex;justify-content:space-between;align-items:center;list-style:none;
+#step-1 .situation-context-info summary{
+  cursor:pointer;color:#2b5670;font-weight:700;font-size:.88rem;
+  line-height:1.35;padding:9px 11px;min-height:38px;
+  display:flex;align-items:center;justify-content:space-between;gap:9px;
+  list-style:none;
 }
-#step-2 .phase-opening-info summary::-webkit-details-marker{display:none}
-#step-2 .phase-opening-info summary::after{
-  content:"+";display:inline-block;flex:none;font-size:1.15em;font-weight:700;
-  line-height:1;color:#52738a;
+#step-1 .situation-context-info summary::-webkit-details-marker{display:none}
+#step-1 .situation-context-info summary::after{
+  content:"+";display:inline-block;flex:none;font-size:1.15em;
+  font-weight:700;line-height:1;color:#52738a;
 }
-#step-2 .phase-opening-info[open] summary::after{content:"−"}
-#step-2 .phase-opening-info summary:hover{background:#eff4f7}
-#step-2 .phase-opening-info summary:focus-visible{outline:2px solid #315878;outline-offset:-3px}
-#step-2 .phase-opening-extra{padding:11px 12px;background:#fff;border-top:1px solid #d9e4e9}
-#step-2 .phase-opening-extra p{
-  margin:0!important;line-height:1.58;overflow-wrap:normal;hyphens:none;
-  color:#354657;font-size:.97em;
+#step-1 .situation-context-info[open] summary::after{content:"−"}
+#step-1 .situation-context-info summary:hover{background:#eff4f7}
+#step-1 .situation-context-info summary:focus-visible{outline:2px solid #315878;outline-offset:-3px}
+#step-1 .situation-context-extra{padding:11px 12px;background:#fff;border-top:1px solid #d9e4e9}
+#step-1 .stair-card .situation-context-extra p{
+  margin:0!important;line-height:1.58;hyphens:none;
+  overflow-wrap:normal;color:#354657;font-size:.93rem;
 }
-#step-2 .phase-opening-extra p+p{margin-top:9px!important}
 @media(max-width:510px){
- #step-2 .phase-opening-info summary{font-size:.93em}
- #step-2 .phase-opening-extra{padding:11px}
+  #step-1 .situation-context-info summary{font-size:.9rem}
+  #step-1 .situation-context-extra{padding:11px}
 }
 </style>
 </head>
@@ -643,7 +643,15 @@ details summary{color:var(--navy)}
 <div class="cue cue-stair">
 <p class="lbl"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-book"></use></svg>Understand before you analyse</p>
 <div class="analysis-stair" aria-label="Three steps for understanding the interaction">
-<div class="stair-card"><div class="stair-label"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-dialogue"></use></svg>Situation &amp; context</div><p>Who is speaking to whom? What has just happened, what do the characters know, and what does the task ask you to focus on?</p></div>
+<div class="stair-card"><div class="stair-label"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-dialogue"></use></svg>Situation &amp; context</div>
+<p>Who is speaking to whom? What has led to this exchange, and why does it take place now? What do the characters know, and what does the task ask you to focus on?</p>
+<details class="situation-context-info">
+<summary>Why does this interaction matter in the play?</summary>
+<div class="situation-context-extra">
+<p>Consider what prompts the interaction at this point in the drama and what purpose it may serve. A dialogue does not necessarily move the plot forward immediately. It can also delay a decision, deepen a relationship, build expectations or reveal something important about the characters.</p>
+</div>
+</details>
+</div>
 <div class="stair-arrow" aria-hidden="true">↓</div>
 <div class="stair-card indent-1"><div class="stair-label"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-search"></use></svg>Perspectives &amp; relationships</div><p>What does each character want, fear, assume or expect? How close or distant are they? Are power, status or dependency relevant?</p></div>
 <div class="stair-arrow" aria-hidden="true">↓</div>
@@ -673,16 +681,7 @@ details summary{color:var(--navy)}
 <section class="step " id="step-2" aria-labelledby="s2-title"><div class="paper"><div class="cp-top"><div class="cp-badge" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-progress"></use></svg></div><div class="cp-copy"><p class="eyebrow">Step 02 / 04</p><h2 id="s2-title">Tracing the Progression</h2><p class="sub">How does the exchange unfold, and what changes?</p></div></div>
 <p class="lead">Dramatic dialogues may unfold in very different ways. The following <strong>four possible phases</strong> can help you trace how an exchange progresses from its starting situation towards an outcome.</p>
 <h3>A Possible Framework</h3>
-<div class="phase-flow" aria-label="Four connected phases of a dramatic interaction"><div class="phase-flow-row"><div class="phase-flow-name">Opening</div><div class="phase-flow-description">
-<p class="phase-opening-questions">What prompts the exchange? What do the characters want, and <strong>what is at stake</strong>?</p>
-<details class="phase-opening-info">
-<summary>Why this interaction — and why now?</summary>
-<div class="phase-opening-extra">
-<p>Sometimes it helps to consider <strong>why the interaction takes place at this point in the play.</strong> Opening is more than how a dialogue starts on stage, such as a character entering. Ask what brings the characters into this exchange and what dramatic purpose it may serve.</p>
-<p>The dialogue does <strong>not</strong> have to move the plot forward immediately. It might delay a decision, deepen a relationship, build expectations or reveal something important about the characters.</p>
-</div>
-</details>
-</div><svg class="phase-connector" viewBox="0 0 36 39" fill="none" stroke="#a82e35" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18.5 1.5 C18.8 7 17 15 18.2 27"/><path d="M8.8 20.2 C12.7 24.8 16 28.4 18.3 34.7 C21.3 28.8 25.1 25 28.3 21.4"/></svg></div>
+<div class="phase-flow" aria-label="Four connected phases of a dramatic interaction"><div class="phase-flow-row"><div class="phase-flow-name">Opening</div><div class="phase-flow-description">How does the exchange begin? How do the characters initially approach one another, and what tone or expectations are established?</div><svg class="phase-connector" viewBox="0 0 36 39" fill="none" stroke="#a82e35" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18.5 1.5 C18.8 7 17 15 18.2 27"/><path d="M8.8 20.2 C12.7 24.8 16 28.4 18.3 34.7 C21.3 28.8 25.1 25 28.3 21.4"/></svg></div>
 <div class="phase-flow-row"><div class="phase-flow-name">Development</div><div class="phase-flow-description">As the characters respond to one another, they may <strong>agree, disagree, question, persuade, connect or withdraw.</strong> Their attitudes, relationship or the atmosphere may change.</div><svg class="phase-connector" viewBox="0 0 36 39" fill="none" stroke="#a82e35" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18.5 1.5 C18.8 7 17 15 18.2 27"/><path d="M8.8 20.2 C12.7 24.8 16 28.4 18.3 34.7 C21.3 28.8 25.1 25 28.3 21.4"/></svg></div>
 <div class="phase-flow-row"><div class="phase-flow-name">Critical Moment</div><div class="phase-flow-description">A statement, reaction or action may become <strong>particularly meaningful</strong>, revealing an unspoken feeling, changing a perspective, bringing the characters closer or exposing a difference between them.</div><svg class="phase-connector" viewBox="0 0 36 39" fill="none" stroke="#a82e35" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18.5 1.5 C18.8 7 17 15 18.2 27"/><path d="M8.8 20.2 C12.7 24.8 16 28.4 18.3 34.7 C21.3 28.8 25.1 25 28.3 21.4"/></svg></div>
 <div class="phase-flow-row"><div class="phase-flow-name">Outcome</div><div class="phase-flow-description">The exchange ends with the relationship, attitudes or situation <strong>changed, reaffirmed or left open.</strong> Even an unresolved interaction can influence what happens next.</div></div></div>
