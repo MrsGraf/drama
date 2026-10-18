@@ -397,6 +397,30 @@ details summary{color:var(--navy)}
 
 /* Desktop only: reduce empty space between banner and Act/Scene heading. */
 @media(min-width:1200px){.map-identity{margin-top:-30px;position:relative;z-index:1}}
+
+/* METHOD SHEET – one shared header and identical content across viewports.
+   Responsive breakpoints affect placement of the four navigation buttons only. */
+.map-identity-inner .identity-title-row{grid-template-columns:minmax(0,1fr)}
+.map-identity-inner .identity-copy{width:100%;min-width:0;max-width:none}
+.map-identity-inner .identity-title-row>.script-reminder{display:none!important}
+.map-identity h1{font-weight:850;line-height:1.13;text-wrap:balance}
+.desktop-side .side-divider,.desktop-side .script-reminder{display:none!important}
+@media(min-width:1051px) and (max-width:1199px){
+  .map-identity-inner{grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);grid-template-rows:auto auto;gap:10px 18px;align-items:center}
+  .map-identity-inner .identity-scene,.map-identity-inner .identity-title-row{display:contents}
+  .map-identity-inner .identity-scene>.identity-kicker{grid-row:1;grid-column:1/-1}
+  .map-identity-inner .identity-copy{grid-row:2;grid-column:1;align-self:center}
+  .map-identity-inner .identity-nav{grid-row:2;grid-column:2;align-self:center}
+}
+@media(max-width:1050px){
+  .map-identity-inner .identity-title-row{display:block}
+  .map-identity-inner .identity-copy{width:100%}
+}
+@media(min-width:1200px){
+  .map-identity-inner .identity-title-row{display:flex;justify-content:center}
+  .map-identity-inner .identity-copy{text-align:center}
+}
+
 </style>
 <style>
 /* These generic method-sheet blocks reuse the visual language of the three original dialogue guides. */
@@ -425,13 +449,11 @@ details summary{color:var(--navy)}
 </header>
 <section class="map-identity" aria-labelledby="map-title"><div class="wrap map-identity-inner">
   <div class="identity-scene">
-    <p class="identity-kicker"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-book"></use></svg> METHOD SHEET · DRAMATIC DIALOGUES</p>
+    <p class="identity-kicker"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-book"></use></svg> METHOD SHEET</p>
     <div class="identity-title-row">
       <div class="identity-copy">
-        <h1 id="map-title">Analysing <span class="identity-amp">Dramatic Dialogues</span></h1>
-        <div class="identity-chips"><span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-book"></use></svg> From the guided scene analysis to independent exam writing</span></div>
+        <h1 id="map-title">Understanding Dramatic Interaction</h1>
       </div>
-      <div class="script-reminder" role="note"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-book"></use></svg><p><strong>Your independent analysis toolkit.</strong> Follow the task, select meaningful evidence and connect dialogue, stage directions and language to an interpretation.</p></div>
     </div>
   </div>
   <div class="identity-nav"><nav class="step-nav" aria-label="Method sheet steps"><button type="button" data-jump="0" class="active"><span class="num"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-dialogue"></use></svg><span class="sr-only">Step 1</span></span><span>Understanding</span></button><button type="button" data-jump="1" class=""><span class="num"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-progress"></use></svg><span class="sr-only">Step 2</span></span><span>Development</span></button><button type="button" data-jump="2" class=""><span class="num"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-search"></use></svg><span class="sr-only">Step 3</span></span><span>Techniques</span></button><button type="button" data-jump="3" class=""><span class="num"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-pen"></use></svg><span class="sr-only">Step 4</span></span><span>Writing</span></button></nav></div>
@@ -439,8 +461,6 @@ details summary{color:var(--navy)}
 <div class="wrap main">
 <aside class="side desktop-side" aria-label="Method sheet navigation"><div class="side-card">
 <p class="side-title">Your analysis route</p><nav class="step-nav" aria-label="Desktop method sheet steps"><button type="button" data-jump="0" class="active"><span class="num"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-dialogue"></use></svg><span class="sr-only">Step 1</span></span><span>Understanding</span></button><button type="button" data-jump="1" class=""><span class="num"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-progress"></use></svg><span class="sr-only">Step 2</span></span><span>Development</span></button><button type="button" data-jump="2" class=""><span class="num"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-search"></use></svg><span class="sr-only">Step 3</span></span><span>Techniques</span></button><button type="button" data-jump="3" class=""><span class="num"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-pen"></use></svg><span class="sr-only">Step 4</span></span><span>Writing</span></button></nav>
-<hr class="side-divider">
-<div class="script-reminder" role="note"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-book"></use></svg><p><strong>Exam focus:</strong> If the task specifies interaction, stage directions and use of language, address all three, but not mechanically or necessarily equally.</p></div>
 </div></aside>
 <main class="content" id="analysis-main">
 <section class="step active" id="step-1" aria-labelledby="s1-title"><div class="paper"><div class="cp-top"><div class="cp-badge" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-dialogue"></use></svg></div><div class="cp-copy"><p class="eyebrow">Step 01 / 04</p><h2 id="s1-title">Understanding the Interaction</h2><p class="sub">What happens — and what is at stake?</p></div></div>
