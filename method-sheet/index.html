@@ -431,26 +431,33 @@ details summary{color:var(--navy)}
 .locwrap a.loc:hover{text-decoration:underline;background:#e2ebf2}
 @media print{.step{display:block!important;animation:none!important;margin-bottom:18px;break-after:auto}.side,.identity-nav,.script-reminder{display:none!important}.main{display:block}.paper{box-shadow:none;border:1px solid #d7dde2}.map-identity{position:static!important}.footer{display:none}.language-toolkit{break-inside:avoid}}
 
-/* Step 1: the two concepts share a single white card, at every screen width. */
-#step-1 .insight-switch {margin-top:14px}
-#step-1 .insight-tabs {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-bottom:10px}
-#step-1 .insight-tabs button {
-  border:1px solid #ccd8e2;border-radius:5px;background:#f1f5f8;color:var(--navy);
+/* Two complementary greens: dark for Tension, lighter for Subtext.
+   Both the active control AND its content panel use the corresponding colour. */
+#step-1 .insight-switch{margin-top:14px}
+#step-1 .insight-tabs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-bottom:10px}
+#step-1 .insight-tabs button{
+  border:1px solid #ccd8d1;border-radius:5px;background:#f5f7f5;color:#354f44;
   min-height:42px;padding:7px 12px;font:750 .92rem/1.3 system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
-  cursor:pointer;transition:background .16s,border-color .16s,box-shadow .16s;
+  cursor:pointer;transition:background .16s,border-color .16s,box-shadow .16s
 }
-#step-1 .insight-tabs button:hover {background:#e8eff4;border-color:#9db3c2}
-#step-1 .insight-tabs button[aria-selected="true"] {
-  background:#fff2ef;border-color:#b12e33;color:#92272e;
-  box-shadow:inset 0 -3px 0 #b12e33;
+#step-1 .insight-tabs button:hover{background:#eaf1eb;border-color:#7f9c88}
+#step-1 .insight-tabs button[data-insight-tab="0"][aria-selected="true"]{
+  background:#e3f1e9;border-color:#28604a;color:#245742;
+  box-shadow:inset 0 -3px 0 #28604a
 }
-#step-1 .insight-tabs button:focus-visible {outline:3px solid #24466a;outline-offset:2px}
-#step-1 .insight-panel {border:1px solid #d4dfe7;border-left:4px solid #607f99;border-radius:5px;background:#f8fbfd;padding:14px 16px}
-#step-1 .insight-panel[hidden] {display:none!important}
-#step-1 .insight-panel strong:first-child {display:block;color:var(--navy);font-size:.91rem;margin-bottom:7px}
-#step-1 .insight-panel p {line-height:1.55}
-#step-1 .tension-panel {border:2px solid #b12e33;border-left-width:5px;background:#fffaf8;box-shadow:0 2px 9px rgba(146,43,47,.06)}
-#step-1 .tension-panel strong:first-child {color:#92272e}
+#step-1 .insight-tabs button[data-insight-tab="1"][aria-selected="true"]{
+  background:#ecf5ea;border-color:#729777;color:#426b4b;
+  box-shadow:inset 0 -3px 0 #729777
+}
+#step-1 .insight-tabs button:focus-visible{outline:3px solid #24466a;outline-offset:2px}
+#step-1 .insight-panel{border:2px solid #d2dfd5;border-left-width:5px;border-radius:5px;padding:14px 16px}
+#step-1 .insight-panel[hidden]{display:none!important}
+#step-1 .insight-panel strong:first-child{display:block;font-size:.91rem;margin-bottom:7px}
+#step-1 .insight-panel p{line-height:1.55}
+#step-1 .tension-panel{border-color:#28604a;background:#f0f8f3;box-shadow:0 2px 9px rgba(40,96,74,.06)}
+#step-1 .tension-panel strong:first-child{color:#245742}
+#step-1 .subtext-panel{border-color:#729777;background:#f6faf4;box-shadow:0 2px 9px rgba(92,132,97,.05)}
+#step-1 .subtext-panel strong:first-child{color:#426b4b}
 
 /* Step 2: a coherent four-part sequence, visually based on the class handout.
    Information remains the same on desktop, tablet and phone. */
@@ -559,14 +566,14 @@ details summary{color:var(--navy)}
       </div>
     </div>
   </div>
-  <div class="identity-nav"><nav class="step-nav" aria-label="Method sheet steps"><button type="button" data-jump="0" class="active"><span class="num"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-dialogue"></use></svg><span class="sr-only">Step 1</span></span><span>Understanding</span></button><button type="button" data-jump="1" class=""><span class="num"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-progress"></use></svg><span class="sr-only">Step 2</span></span><span>Development</span></button><button type="button" data-jump="2" class=""><span class="num"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-search"></use></svg><span class="sr-only">Step 3</span></span><span>Techniques</span></button><button type="button" data-jump="3" class=""><span class="num"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-pen"></use></svg><span class="sr-only">Step 4</span></span><span>Writing</span></button></nav></div>
+  <div class="identity-nav"><nav class="step-nav" aria-label="Method sheet steps"><button type="button" data-jump="0" class="active"><span class="num"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-dialogue"></use></svg><span class="sr-only">Step 1</span></span><span>Situation</span></button><button type="button" data-jump="1" class=""><span class="num"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-progress"></use></svg><span class="sr-only">Step 2</span></span><span>Progression</span></button><button type="button" data-jump="2" class=""><span class="num"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-search"></use></svg><span class="sr-only">Step 3</span></span><span>Techniques</span></button><button type="button" data-jump="3" class=""><span class="num"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-pen"></use></svg><span class="sr-only">Step 4</span></span><span>Writing</span></button></nav></div>
 </div></section>
 <div class="wrap main">
 <aside class="side desktop-side" aria-label="Method sheet navigation"><div class="side-card">
-<p class="side-title">Your analysis route</p><nav class="step-nav" aria-label="Desktop method sheet steps"><button type="button" data-jump="0" class="active"><span class="num"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-dialogue"></use></svg><span class="sr-only">Step 1</span></span><span>Understanding</span></button><button type="button" data-jump="1" class=""><span class="num"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-progress"></use></svg><span class="sr-only">Step 2</span></span><span>Development</span></button><button type="button" data-jump="2" class=""><span class="num"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-search"></use></svg><span class="sr-only">Step 3</span></span><span>Techniques</span></button><button type="button" data-jump="3" class=""><span class="num"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-pen"></use></svg><span class="sr-only">Step 4</span></span><span>Writing</span></button></nav>
+<p class="side-title">Your analysis route</p><nav class="step-nav" aria-label="Desktop method sheet steps"><button type="button" data-jump="0" class="active"><span class="num"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-dialogue"></use></svg><span class="sr-only">Step 1</span></span><span>Situation</span></button><button type="button" data-jump="1" class=""><span class="num"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-progress"></use></svg><span class="sr-only">Step 2</span></span><span>Progression</span></button><button type="button" data-jump="2" class=""><span class="num"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-search"></use></svg><span class="sr-only">Step 3</span></span><span>Techniques</span></button><button type="button" data-jump="3" class=""><span class="num"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-pen"></use></svg><span class="sr-only">Step 4</span></span><span>Writing</span></button></nav>
 </div></aside>
 <main class="content" id="analysis-main">
-<section class="step active" id="step-1" aria-labelledby="s1-title"><div class="paper"><div class="cp-top"><div class="cp-badge" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-dialogue"></use></svg></div><div class="cp-copy"><p class="eyebrow">Step 01 / 04</p><h2 id="s1-title">Understanding the Interaction</h2><p class="sub">What happens — and what is at stake?</p></div></div>
+<section class="step active" id="step-1" aria-labelledby="s1-title"><div class="paper"><div class="cp-top"><div class="cp-badge" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-dialogue"></use></svg></div><div class="cp-copy"><p class="eyebrow">Step 01 / 04</p><h2 id="s1-title">Understanding the Dramatic Situation</h2><p class="sub">Who is involved, what matters to them, and why?</p></div></div>
 <p class="lead"><strong>A convincing drama analysis begins with a clear understanding of the dramatic situation.</strong> First, make sure you understand what happens in the excerpt, how the characters relate to one another, and what their intentions and perspectives are. This provides the foundation for analysing how interaction, stage directions and use of language create meaning.</p>
 <div class="cue cue-stair">
 <p class="lbl"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-book"></use></svg>Understand before you analyse</p>
@@ -577,7 +584,7 @@ details summary{color:var(--navy)}
 <div class="stair-arrow" aria-hidden="true">↓</div>
 <div class="stair-card indent-2">
   <div class="stair-label"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-lightbulb"></use></svg>Tension &amp; subtext</div>
-  <p>What do the characters express openly — and what might remain beneath the surface?</p>
+  <p>Are there tensions between the characters? Are feelings or intentions left unspoken?</p>
   <div class="insight-switch" aria-label="Explore tension and subtext">
     <div class="insight-tabs" role="tablist" aria-label="Tension and subtext">
       <button type="button" role="tab" id="insight-tab-tension" aria-controls="insight-panel-tension" aria-selected="true" tabindex="0" data-insight-tab="0">Tension</button>
@@ -597,10 +604,10 @@ details summary{color:var(--navy)}
 
 
 </div></section>
-<section class="step " id="step-2" aria-labelledby="s2-title"><div class="paper"><div class="cp-top"><div class="cp-badge" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-progress"></use></svg></div><div class="cp-copy"><p class="eyebrow">Step 02 / 04</p><h2 id="s2-title">How an Interaction Unfolds</h2><p class="sub">Tracing the course of a dramatic dialogue</p></div></div>
+<section class="step " id="step-2" aria-labelledby="s2-title"><div class="paper"><div class="cp-top"><div class="cp-badge" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-progress"></use></svg></div><div class="cp-copy"><p class="eyebrow">Step 02 / 04</p><h2 id="s2-title">Tracing the Interaction</h2><p class="sub">How does the exchange unfold, and what changes?</p></div></div>
 <p class="lead">Dramatic dialogues may unfold in very different ways. The following <strong>four possible phases</strong> can help you trace how an exchange progresses from its starting situation towards an outcome.</p>
 <h3>A Possible Framework</h3>
-<div class="phase-flow" aria-label="Four connected phases of a dramatic interaction"><div class="phase-flow-row"><div class="phase-flow-name">Opening</div><div class="phase-flow-description">The situation, the characters’ intentions and their relationship establish <strong>what matters to them</strong> and why the exchange is significant.</div><svg class="phase-connector" viewBox="0 0 36 39" fill="none" stroke="#a82e35" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18.5 1.5 C18.8 7 17 15 18.2 27"/><path d="M8.8 20.2 C12.7 24.8 16 28.4 18.3 34.7 C21.3 28.8 25.1 25 28.3 21.4"/></svg></div>
+<div class="phase-flow" aria-label="Four connected phases of a dramatic interaction"><div class="phase-flow-row"><div class="phase-flow-name">Opening</div><div class="phase-flow-description">What prompts the exchange, and <strong>what is at stake</strong> for the characters? Consider why it takes place at this point in the play: it may <strong>move the action forward, delay a decision</strong> or reveal something significant about their relationship or values.</div><svg class="phase-connector" viewBox="0 0 36 39" fill="none" stroke="#a82e35" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18.5 1.5 C18.8 7 17 15 18.2 27"/><path d="M8.8 20.2 C12.7 24.8 16 28.4 18.3 34.7 C21.3 28.8 25.1 25 28.3 21.4"/></svg></div>
 <div class="phase-flow-row"><div class="phase-flow-name">Development</div><div class="phase-flow-description">As the characters respond to one another, they may <strong>agree, disagree, question, persuade, connect or withdraw.</strong> Their attitudes, relationship or the atmosphere may change.</div><svg class="phase-connector" viewBox="0 0 36 39" fill="none" stroke="#a82e35" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18.5 1.5 C18.8 7 17 15 18.2 27"/><path d="M8.8 20.2 C12.7 24.8 16 28.4 18.3 34.7 C21.3 28.8 25.1 25 28.3 21.4"/></svg></div>
 <div class="phase-flow-row"><div class="phase-flow-name">Critical Moment</div><div class="phase-flow-description">A statement, reaction or action may become <strong>particularly meaningful</strong>, revealing an unspoken feeling, changing a perspective, bringing the characters closer or exposing a difference between them.</div><svg class="phase-connector" viewBox="0 0 36 39" fill="none" stroke="#a82e35" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18.5 1.5 C18.8 7 17 15 18.2 27"/><path d="M8.8 20.2 C12.7 24.8 16 28.4 18.3 34.7 C21.3 28.8 25.1 25 28.3 21.4"/></svg></div>
 <div class="phase-flow-row"><div class="phase-flow-name">Outcome</div><div class="phase-flow-description">The exchange ends with the relationship, attitudes or situation <strong>changed, reaffirmed or left open.</strong> Even an unresolved interaction can influence what happens next.</div></div></div>
